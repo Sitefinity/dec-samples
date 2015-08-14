@@ -35,7 +35,7 @@ demoApplication.login = (function(app) {
                                                                              resolve();
                                                                          }, function(reason) {
                                                                              if(reason.status === 401){
-                                                                                 alert("You are not properly authorized before the DEC Server. Is you apiKey and authToken tokens set correctly? You could find those tokens in the scripts/tracking.js file. Please close the emulator end resolve the issue.");                                                                                 
+                                                                                 alert("This application is not property authenticated. Are your apiKey and authToken tokens set correctly? You could find those tokens in the scripts/tracking.js file. Please close the emulator and resolve the issue.");                                                                                 
                                                                                  reject();
                                                                              }
                         													else{
