@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <link href="bower_components/kendo-ui-appbuilder-core/styles/kendo.mobile.all.min.css" rel="stylesheet">
+        <link href="styles/main.css" rel="stylesheet">
+        <link href="styles/font-awesome.css" rel="stylesheet">
+
+        <!-- cordova script (this will be a 404 during development if served with `grunt serve`) -->
+        <script src="cordova.js"></script>
+
+        <script src="bower_components/kendo-ui-appbuilder-core/js/jquery.min.js"></script>
+        <script src="bower_components/kendo-ui-appbuilder-core/js/kendo.mobile.min.js"></script>
+        <script src="bower_components/everlive/min/everlive.all.min.js"></script>
+        <script src="bower_components/rsvp/rsvp.js"></script>
+        <script src="bower_components/moment/moment.js"></script>
+        <script src="lib/progress/progress.all.min.js"></script>
+        <script src="lib/sfDataIntell/telerik-dec-client.js"></script>
+        <script src="app.js"></script>
+
+        <script src="scripts/users.js"></script>
+        <script src="scripts/posts.js"></script>
+        <script src="scripts/devices.js"></script>
+        <script src="scripts/share.js"></script>
+        <script src="scripts/tracking.js"></script>
+        <script src="scripts/personalization-provider.js"></script>
+        <script src="scripts/utils.js"></script>
+
+        <script src="views/login/log-in.js"></script>
+
+        <script src="views/posts/list-posts.js"></script>
+        <script src="views/posts/post-details.js"></script>
+        <script src="views/posts/post-comments.js"></script>
+        <script src="views/posts/search-post.js"></script>
+
+        <script src="views/devices/list-devices.js"></script>
+        <script src="views/devices/device-page.js"></script>
+
+        <script src="views/profile/profile-details.js"></script>
+    </head>
+
+    <body id="quantum-modile-hybrid">
+
+        <!-- Layouts -->
+        <!-- default layout -->
+        <div data-role="layout" data-id="default-layout">
+            <footer data-role="footer" id="footer">
+
+                <!-- START: add coments page -->
+                <textarea class="add-comment-textarea" placeholder="Write a comment..." style="display: none;" class="dec-comment-field" required></textarea>
+                <!-- END: add coments page -->
+
+                <form class="share-form dec-share-buttons"  style="display: none">
+                    <ul data-role="listview" data-style="inset">
+                        <li>
+                            <button data-role="button" style="width: 100%;" data-click="demoApplication.share.shareToFacebook">Share to Facebook</button>
+                        </li>
+                        <li>
+                            <button data-role="button" style="width: 100%;" data-click="demoApplication.share.tweet">Tweet</button>
+                        </li>
+                        <li>
+                            <button data-role="button" style="width: 100%;" data-click="demoApplication.share.copyShareUrl">Copy Share URL</button>
+                        </li>
+                    </ul>
+
+                    <ul data-role="listview" data-style="inset">
+                        <li>
+                            <button data-role="button" style="width: 100%;" data-click="demoApplication.share.cancel">Cancel</button>
+                        </li>
+                    </ul>
+                </form>
+
+                <div data-role="tabstrip" class="navigation-container-tabstrip">
+                    <a href="views/posts/list-posts.html"><i class="fa fa-list fa-3x dec-block"></i>Feed</a>
+                    <a href="views/devices/list-devices.html"><i class="fa fa-laptop fa-3x dec-block"></i>Devices</a>
+                    <a href="views/profile/profile-details.html"><i class="fa fa-user fa-3x dec-block"></i>Profile</a>
+                </div>
+            </footer>
+        </div>
+
+        <!-- No navr -->
+        <div data-role="layout" data-id="main-nonav">
+            <footer data-role="footer">
+            </footer>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,92 @@
+.km-flat .km-scroller-pull {
+  background: rgb(20, 95, 215) !important;
+}
+.km-flat .km-view .km-navbar {
+    background-color: rgb(74, 135, 238);
+}
+.km-flat .km-view .km-navbar .km-view-title > * {
+    color: rgb(255, 255, 255);
+}
+.km-flat .km-view .km-content {
+    background-color: rgb(255, 255, 255);
+}
+.km-flat .km-view .km-navbar .km-button {
+    background-color: rgb(74, 135, 238);
+}
+.km-flat .km-view .km-navbar .km-button .km-text {
+    color: rgb(255, 255, 255);
+}
+.km-flat .km-view .km-navbar .km-button.km-state-active {
+    background-color: rgb(20, 95, 215);
+}
+.km-flat .km-view .km-content .km-list > li {
+    background-color: rgb(255, 255, 255);
+}
+.km-flat .km-view .km-content .km-list .km-state-active .km-listview-link {
+    background-color: rgb(20, 95, 215);
+}
+.km-list:not(.km-virtual-list)>li:first-child {
+    border-top-width: 1px;
+}
+.km-list:not(.km-virtual-list)>li:last-child {
+    border-bottom-width: 1px;
+}
+.km-flat .km-view .km-tabstrip .km-button.km-state-active {
+    background-color: rgb(20, 95, 215);
+}
+.km-flat .km-view .km-tabstrip .km-button {
+    background-color: rgb(74, 135, 238);
+}
+.km-flat .km-view .km-content .km-scrollview {
+    background-color: rgb(255, 255, 255);
+}
+.km-flat .km-view .km-content .km-button .km-text {
+    color: rgb(255, 255, 255);
+}
+.km-flat .km-view .km-content .km-button {
+    background-color: rgb(74, 135, 238);
+}
+.km-flat .km-view .km-content .km-button.km-state-active {
+    background-color: rgb(20, 95, 215);
+}
+
+.km-flat .km-view .km-content .km-listgroup .km-group-title {
+    color: rgb(229, 229, 229);
+}
+.km-flat .km-view .km-content .km-listgroup .km-group-title .km-text {
+    color: rgb(153, 153, 153);
+}
+.km-flat .km-actionsheet>li{
+    border-color: rgb(74, 135, 238);
+    border-style: solid;
+    border-width: 0 0px 1px 0px;
+}
+.km-flat .km-actionsheet>li>a {
+    background-color: rgb(255, 255, 255);  
+    color: rgb(0, 0, 0);  
+}
+.km-flat .km-actionsheet>li>a:hover {
+    background-color: rgb(20, 95, 215);
+}
+.km-flat .km-loader.km-widget::before {
+    background: rgb(20, 95, 215);
+}
+.km-flat .km-view .km-content .km-switch .km-switch-container {
+    background-color: rgb(74, 135, 238);
+}
+.km-flat .km-switch-handle, .km-flat .k-slider-selection, .km-flat .km-switch-background {
+    color: rgb(74, 135, 238);
+}
+.km-flat .km-view .km-content .km-switch .km-switch-container .km-switch-handle {
+    color: rgb(74, 135, 238); 
+}
+.km-flat .km-view .km-content .km-list > li .km-switch .km-switch-container {
+    background-color: rgb(20, 95, 215);
+}
+.km-flat .km-touch-scrollbar {
+  background-color: rgb(74, 135, 238);
+}
+.km-flat .km-pages .km-current-page
+{
+   background-color: rgb(74, 135, 238);
+}

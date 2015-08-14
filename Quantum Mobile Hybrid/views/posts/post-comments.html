@@ -1,0 +1,28 @@
+<div data-role="view" id="post-comments" data-title="Comments" data-layout="default-layout"
+     data-show="demoApplication.postComments.init" 
+     data-hide="demoApplication.postComments.hide" class="dec-white-container" data-transition="slide">
+
+    <header data-role="header">
+        <div data-role="navbar" class="default-layout-navbar">
+            <a data-role="backbutton" class="back-btn fa fa-angle-left" data-align="left"></a>
+            <a class="add-comment-btn dec-button-xsmall" data-role="button" data-align="right" data-click="demoApplication.postComments.addComment">Send</a>
+            <span data-role="view-title"></span>
+        </div>
+    </header>
+
+    <ul data-role="listview" id="comments-list" data-bind="source: allComments" data-template="list-comment-item">
+    </ul>
+</div>
+
+<script id="list-comment-item" type="text/x-kendo-template">
+    <div class="dec-comment-box">
+		<image src="#: authorImageUrl #" style="width: 25%;"/>   
+        <span class="dec-comment-time-ago">
+            #: moment(createdOn).fromNow() #
+        </span>
+        <h3>#: authorName #</h3>     
+        <p> 
+            #: text #        
+        </p>
+    </div>
+</script>

@@ -1,0 +1,71 @@
+<div data-role="view" id="feed" data-title="Feed"  data-layout="default-layout" 
+     data-show="demoApplication.listPosts.init">
+    <header data-role="header">
+        <div data-role="navbar">
+            <span data-role="view-title"></span>
+            <a data-role="button" href="views/posts/search-post.html" data-align="right"  class="fa fa-search dec-button-small"></a>
+        </div>
+    </header>
+
+    <ul data-role="listview" id="post-list" data-source="demoApplication.listPosts.allPosts" data-template="list-post-item" data-header-template="list-post-group-header">
+    </ul>
+    
+    <div data-role="modalview" class="mock-call-modal" style="width:100%">>
+        <div>
+            <p>Calling <span class="phone-number-span"></span></p>
+            <p>
+                <a data-align="right" data-click="demoApplication.listPosts.closeMockCall" data-role="button" style="width: 100%">End</a>
+            </p>
+        </div>
+    </div>
+</div>
+
+<script id="list-post-group-header" type="text/x-kendo-template">
+    <div class="dec-group-header">
+        <span>#: demoApplication.utils.dateTime.dateToDaysAgo(value)#</span>
+        <span>#: value #</span>
+    </div>    
+</script>
+
+<script id="list-post-item" type="text/x-kendo-template">
+    <div>
+        #if (isPersonalizationBanner !== true) {#
+            # if(imageUrl) {#
+            <p>
+                <image src="#: imageUrl #" style="width: 100%;display:block;margin:auto;" />
+            </p>
+            # } #
+            
+            <h2 class="dec-title-link">
+                <a href="\#views/posts/post-details.html?postId=#: id #">#: title #</a>
+            </h2>
+            <p>
+                #: overview #
+            </p>
+         	<p>
+                <a data-role="button" style="float: left" class="dec-likes" data-click="demoApplication.listPosts.toggleUserLike" data-postid="#: id #">
+                    <i class="fa fa-heart#: demoApplication.posts.checkIfCurrentUserLikesPost(data) ? '' : '-o'# fa-2x"></i><br>
+                    <span>#:likesCount# likes</span>
+                </a>
+                <a  href="\#views/posts/post-comments.html?postId=#: id #" data-role="button" style="float: right;" class="dec-comments">
+                	<i class="fa fa-comment-o fa-2x"></i><br>
+                    <span>#: commentsCount# comments</span> 
+   			 </a>
+             </p>
+        #} else {#
+        	<div class="dec-banner #: name #">
+                <image src="#: imageUrl #" style="width: 30%; position: absolute; left: .3em;" />
+                <h3>#: personalMessage #</h3>
+                <p>
+                 #if(phoneNumber !== false) {#
+                    #if(demoApplication.isEmulated){#
+                    	<a onclick="demoApplication.listPosts.showMockCall('#: phoneNumber #')" class="dec-phone"><i class="fa fa-phone fa-lg"></i> #: phoneNumber #</a>
+                    #} else {#
+                    	<a href="tel:#: phoneNumber #" class="dec-phone" onclick="demoApplication.tracking.writeSentence(demoApplication.tracking.predicates.call, '#: phoneNumber #')"><i class="fa fa-phone fa-lg"></i> #: phoneNumber #</a>
+                    #}#
+                 #}#
+                </p>
+            </div>
+        #}#
+    </div>
+</script>

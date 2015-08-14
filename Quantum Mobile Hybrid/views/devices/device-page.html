@@ -1,0 +1,43 @@
+<div data-role="view" id="device-page" data-title="Device" data-layout="default-layout"
+    data-show="demoApplication.devicePage.init" 
+    data-hide="demoApplication.devicePage.hide" class="dec-device-container" data-transition="slide">
+    
+    <header data-role="header">
+        <div data-role="navbar" class="default-layout-navbar">
+            <a data-role="backbutton" class="back-btn fa fa-angle-left" data-align="left"></a>
+            <span data-role="view-title"></span>
+        </div>
+    </header>
+    
+    <div class="dec-device-info">
+        <image data-bind="attr: {src: device.imageUrl }" style="width: 50%;display:block; margin:auto; float: left;" />
+        <ul>
+            <li>
+                <h2 data-bind="text: device.name"></h2>
+            </li>
+            <li data-bind="text: device.deviceId" class="dec-device-id"></li>
+        </ul>
+    </div>
+
+    <div id="device-page-tabstrip" data-role="tabstrip">
+    </div>
+
+    <div id="device-page-tab-content" class="dec-device-updates">
+        <p id="device-page-updates-tab" data-bind="visible: isUpdatesVisible" >
+            <ul data-role="listview" id="device-updates-list" data-bind="source: allUpdates, visible: isUpdatesVisible" data-template="list-device-updates-item">
+            </ul>
+        </p>
+
+        <p id="device-page-details-tab" data-bind="visible: isDetailsVisible" >
+            details
+        </p>
+    </div>
+</div>
+
+<script id="list-device-updates-item" type="text/x-kendo-template">
+    <div class="#: (!seen) ? 'dec-not-seen' : ''  #">
+        <p>
+            <span> #: title #</span>
+        </p>
+    </div>
+</script>

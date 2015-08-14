@@ -1,0 +1,21 @@
+<div data-role="view" id="profile-details" data-title="YOU" data-show="demoApplication.profileDetails.init" data-layout="default-layout" data-stretch="true">
+    <header data-role="header">
+        <div data-role="navbar">
+            <span data-role="view-title"></span>
+            <a data-role="button" data-click="demoApplication.profileDetails.logout" data-align="right"  class="dec-button-xsmall ">Logout</a>
+        </div>
+    </header>
+    
+    <div class="dec-valigned">
+        <div class="dec-profile">
+            <image data-bind="attr: {src: user.imageUrl}" style="width: 60%;display:block; margin:auto;"/>
+
+            <h2 data-bind="text: user.fullName">
+            </h2>
+            <h3 data-bind="text: user.description">
+            </h3>
+            
+        </div>
+    </div>
+         
+</div>

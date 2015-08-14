@@ -1,0 +1,36 @@
+<div data-role="view" id="list-devices" data-title="Devices" data-layout="default-layout" 
+     data-show="demoApplication.listDevices.init" >
+    <header data-role="header">
+        <div data-role="navbar">
+            <span data-role="view-title"></span>
+            <!-- <a data-role="button" data-align="left" class="dec-button-xsmall">Add</a> -->
+            <!-- <a data-role="button" data-align="right" class="dec-button-xsmall">Edit</a> -->
+        </div>
+    </header>
+    <ul data-role="listview" id="devices-list" data-source="demoApplication.listDevices.allDevices" data-template="list-device-item" class="dec-devices">
+    </ul>
+</div>
+
+<script id="list-device-item" type="text/x-kendo-template">
+    <a href="\#views/devices/device-page.html?deviceId=#:id#" class="dec-device">
+        <div>
+            <image src="#: imageUrl #" />
+            <ul>
+                <li class="dec-device-name">#: name #</li>
+                <li class="dec-device-id">#: deviceId #</li>
+                
+                    # var newUpdatesCount = 0;
+                    
+                    for (var i = 0; i < updates.length; i++) {
+                        if (updates[i].seen === false)
+                            newUpdatesCount++;
+                    }
+                    
+                    #
+                    
+            </ul>
+            <span class="dec-views-count">#: newUpdatesCount #</span>
+        </div>
+    </a>
+
+</script>

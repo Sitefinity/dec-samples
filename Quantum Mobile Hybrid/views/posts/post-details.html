@@ -1,0 +1,54 @@
+<div data-role="view" id="post-details" data-title="Post" data-layout="default-layout" data-template="post-details" 
+     data-show="demoApplication.postDetails.init"
+     data-hide="demoApplication.postDetails.hide"
+     data-transition="slide">
+
+    <header data-role="header">
+        <div data-role="navbar" class="default-layout-navbar">
+            <a data-role="backbutton" class="back-btn fa fa-angle-left" data-align="left"></a>
+            <a data-role="button" class="back-btn fa fa-share-alt" data-align="right" data-click="demoApplication.share.toggleMenuVisibility"></a>
+            <span data-role="view-title"></span>
+        </div>
+    </header>
+
+    <h2 class="dec-midtitle" data-bind="text: details.title">
+    </h2>
+
+    <p data-bind="visible: details.imageUrl">
+        <image data-bind="attr: {src: details.imageUrl}"  style="width: 75%;display:block; margin:auto;" />
+    </p>
+    
+    <p>
+        <a data-role="button" class="dec-likes"  data-bind="click: toggleLike">
+            <i data-bind="attr: {class: userLikedClass}"></i><br>
+            <span data-bind="text: likesCount"></span><span> likes</span>
+        </a>
+        <a  data-bind="click: toCommentsPage" data-role="button" style="float: right;" class="dec-comments">
+            <i class="fa fa-comment-o fa-2x"></i><br>
+            <span data-bind="text: commentsCount"></span><span> comments</span>
+        </a>
+        <hr />
+    </p>
+
+    <p data-bind="text: details.text" class="dec-details-text"></p>
+</div>
+
+<form class="share-form"  style="display: none">
+    <ul data-role="listview" data-style="inset">
+        <li>
+            <button data-role="button" style="width: 100%;">Share to Facebook</button>
+        </li>
+        <li>
+            <button data-role="button" style="width: 100%;">Tweet</button>
+        </li>
+        <li>
+            <button data-role="button" style="width: 100%;">Copy Share URL</button>
+        </li>
+    </ul>
+
+    <ul data-role="listview" data-style="inset">
+        <li>
+            <button data-role="button" style="width: 100%;" data-click="demoApplication.postDetails.share.cancel">Cancel</button>
+        </li>
+    </ul>
+</form>

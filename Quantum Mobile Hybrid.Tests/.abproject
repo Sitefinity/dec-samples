@@ -1,0 +1,8 @@
+{
+  "ProjectName": "Quantum Mobile Hybrid.Tests",
+  "ProjectGuid": "2fbde0d1-4a97-40b3-8b7a-81836b861a70",
+  "projectVersion": 1,
+  "ProjectTypeGuids": "{6319b66f-8dff-4073-91be-3cd48a2fdeb3}",
+  "FrameworkVersion": "1.0",
+  "Framework": "MobileTesting"
+}

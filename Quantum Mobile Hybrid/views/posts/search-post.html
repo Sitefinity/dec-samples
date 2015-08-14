@@ -1,0 +1,29 @@
+<div data-role="view" id="feed" data-title="Search" data-layout="default-layout" 
+    data-show="demoApplication.searchPost.init" class="dec-list-bordered" data-transition="slide">
+    <header data-role="header">
+        <div data-role="navbar" class="default-layout-navbar">
+            <a data-role="backbutton" class="back-btn fa fa-angle-left" data-align="left"></a>
+            <span data-role="view-title"></span>
+        </div>
+    </header>
+    
+    <div>
+        <ul data-role="listview" data-style="inset" style="margin: 0px">
+            <li>
+                <label>
+                    <form class="post-search-form dec-search-form">
+                        <span class="fa fa-search"></span>
+                        <input class="post-search-input" type="search" name="search" placeholder="Search..."/>                        
+                    </form>
+                </label>
+            </li>
+        </ul>
+    </div>
+
+    <ul data-role="listview" id="post-list" data-source="demoApplication.searchPost.filteredPosts" data-template="searched-post-result-item" class="dec-search-results">
+    </ul>
+</div>
+
+<script id="searched-post-result-item" type="text/x-kendo-template">
+    <a href="\#views/posts/post-details.html?postId=#: id #">#: title #</a>
+</script>
