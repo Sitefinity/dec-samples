@@ -6,19 +6,14 @@ namespace Telerik.DEC.LeadScoringEventClientDemo
 {
     class Program
     {
-        //TODO: install the nuget from the official repo
         static void Main(string[] args)
         {
             string yourApplicationKey = "";
             AppAccessToken token = new AppAccessToken(Guid.Parse(yourApplicationKey));
 
             string yourDecDataCenterApiKey = "";
-            int checkOnSeconds = 15;
-            int pageSize = 100;
-            //TODO: remove the server url after swap so Live is targeted
-            string serverAddress = @"https://staging.api.dec.sitefinity.com";
-            DateTime defaultFromDate = DateTime.UtcNow.AddMonths(-12);
-            using (LeadScoringEventClient client = new LeadScoringEventClient(token, yourDecDataCenterApiKey, serverAddress, checkOnSeconds, pageSize, defaultFromDate))
+
+            using (LeadScoringEventClient client = new LeadScoringEventClient(token, yourDecDataCenterApiKey))
             {
                 client.Subscribe(ProcessLeadScoringThresholdPasses);
 
@@ -31,12 +26,12 @@ namespace Telerik.DEC.LeadScoringEventClientDemo
             }
         }
 
-        private static void ProcessLeadScoringThresholdPasses(LeadScoringThresholdPassedInfo obj)
+        private static void ProcessLeadScoringThresholdPasses(ILeadScoringEventClient sender, LeadScoringThresholdPassedInfo leadScoringThresholdPassesInfo)
         {
             Console.WriteLine();
-            Console.WriteLine(DateTime.Now.ToString() + "=> Receiving Lead Scoring Threshold Passes...");
+            Console.WriteLine(DateTime.Now.ToString() + " => Receiving Lead Scoring Threshold Passes...");
 
-            foreach (LeadScoringThresholdPass thresholdPass in obj.ThresholdPasses)
+            foreach (LeadScoringThresholdPass thresholdPass in leadScoringThresholdPassesInfo.ThresholdPasses)
             {
                 Console.WriteLine("Lead '{0}' for contact '{1}' has passed threshold '{2}' on '{3}'", thresholdPass.LeadName, 
                     thresholdPass.ContactEmail, thresholdPass.ThresholdName, thresholdPass.ThresholdPassedOn);
