@@ -26,7 +26,7 @@ namespace Telerik.DEC.LeadScoringEventClientDemo
             }
         }
 
-        private static void ProcessLeadScoringThresholdPasses(ILeadScoringEventClient sender, LeadScoringThresholdPassedInfo leadScoringThresholdPassesInfo)
+        private static void ProcessLeadScoringThresholdPasses(ILeadScoringEventClient sender, LeadScoringThresholdPassesInfo leadScoringThresholdPassesInfo)
         {
             Console.WriteLine();
             Console.WriteLine(DateTime.Now.ToString() + " => Receiving Lead Scoring Threshold Passes...");
