@@ -13,7 +13,7 @@ namespace Telerik.DEC.LeadScoringEventClientSample
 
             string yourDecDataCenterApiKey = "";
 
-            int checkIntervalInSeconds = 30;
+            int checkIntervalInSeconds = 120;
             using (ILeadScoringEventClient client = new LeadScoringEventClient(token, yourDecDataCenterApiKey, checkIntervalInSeconds))
             {
                 client.Subscribe(ProcessLeadScoringThresholdPasses);
