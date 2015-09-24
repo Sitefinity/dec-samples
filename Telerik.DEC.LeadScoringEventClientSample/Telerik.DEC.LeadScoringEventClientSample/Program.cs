@@ -8,10 +8,10 @@ namespace Telerik.DEC.LeadScoringEventClientSample
     {
         static void Main(string[] args)
         {
-            string yourApplicationKey = Guid.NewGuid().ToString();// "";
+            string yourApplicationKey = "";
             AppAccessToken token = new AppAccessToken(Guid.Parse(yourApplicationKey));
 
-            string yourDecDataCenterApiKey = Guid.NewGuid().ToString();//"";
+            string yourDecDataCenterApiKey = "";
 
             int checkIntervalInSeconds = 30;
             using (ILeadScoringEventClient client = new LeadScoringEventClient(token, yourDecDataCenterApiKey, checkIntervalInSeconds))
