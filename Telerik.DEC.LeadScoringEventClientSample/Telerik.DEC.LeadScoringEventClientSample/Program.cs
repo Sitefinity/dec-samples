@@ -2,7 +2,7 @@
 using System.Linq;
 using Telerik.DigitalExperienceCloud.Client;
 
-namespace Telerik.DEC.LeadScoringEventClientDemo
+namespace Telerik.DEC.LeadScoringEventClientSample
 {
     class Program
     {
@@ -13,11 +13,13 @@ namespace Telerik.DEC.LeadScoringEventClientDemo
 
             string yourDecDataCenterApiKey = "";
 
-            using (LeadScoringEventClient client = new LeadScoringEventClient(token, yourDecDataCenterApiKey))
+            int checkIntervalInSeconds = 120;
+            using (LeadScoringEventClient client = new LeadScoringEventClient(token, yourDecDataCenterApiKey, checkIntervalInSeconds))
             {
                 client.Subscribe(ProcessLeadScoringThresholdPasses);
 
-                Console.WriteLine("Waiting to receive Lead Scoring Threshold Passes. Pres any key to stop and exit");
+                int intervalInMinutes = client.TimerIntervalInSeconds / 60;
+                Console.WriteLine("Waiting for {0} minutes to receive Lead Scoring Threshold Passes. Pres any key to stop and exit", intervalInMinutes);
                 Console.ReadLine();
 
                 Console.WriteLine("Unsubscribing from the LeadScoringEventClient. Waiting for pending operations to complete.");

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.30723.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Telerik.DEC.LeadScoringEventClientDemo", "Telerik.DEC.LeadScoringEventClientDemo\Telerik.DEC.LeadScoringEventClientDemo.csproj", "{BEFCBAEC-917D-43F6-8D18-E151A3F634C9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Telerik.DEC.LeadScoringEventClientSample", "Telerik.DEC.LeadScoringEventClientSample\Telerik.DEC.LeadScoringEventClientSample.csproj", "{BEFCBAEC-917D-43F6-8D18-E151A3F634C9}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{1A617D38-17C7-4E1E-9D4E-CB502284872F}"
 	ProjectSection(SolutionItems) = preProject
