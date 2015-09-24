@@ -8,17 +8,17 @@ namespace Telerik.DEC.LeadScoringEventClientSample
     {
         static void Main(string[] args)
         {
-            string yourApplicationKey = "";
+            string yourApplicationKey = Guid.NewGuid().ToString();// "";
             AppAccessToken token = new AppAccessToken(Guid.Parse(yourApplicationKey));
 
-            string yourDecDataCenterApiKey = "";
+            string yourDecDataCenterApiKey = Guid.NewGuid().ToString();//"";
 
-            int checkIntervalInSeconds = 120;
+            int checkIntervalInSeconds = 30;
             using (ILeadScoringEventClient client = new LeadScoringEventClient(token, yourDecDataCenterApiKey, checkIntervalInSeconds))
             {
                 client.Subscribe(ProcessLeadScoringThresholdPasses);
 
-                int intervalInMinutes = client.TimerIntervalInSeconds / 60;
+                int intervalInMinutes = TimeSpan.FromSeconds(checkIntervalInSeconds).Minutes;
                 Console.WriteLine("Waiting for {0} minutes to receive Lead Scoring Threshold Passes. Pres any key to stop and exit", intervalInMinutes);
                 Console.ReadLine();
 
