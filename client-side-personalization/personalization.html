@@ -1,219 +1,249 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="">
-        <meta name="author" content="">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-        <title>Digital Experience Cloud SDK for JavaScript</title>
+    <title>Progress Sitefinity Digital Experience Cloud SDK for JavaScript</title>
 
-        <!-- Bootstrap core CSS -->
-        <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
-        <!-- Custom styles for this template -->
-        <link href="jumbotron-narrow.css" rel="stylesheet">
-        <!-- jQuery core js -->
-        <script src="http://code.jquery.com/jquery-1.11.3.js" type="text/javascript"></script>
-        <!-- Bootstrap core js -->
-        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <!-- Bootstrap core CSS -->
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="jumbotron-narrow.css" rel="stylesheet">
+    <!-- jQuery core js -->
+    <script src="http://code.jquery.com/jquery-1.11.3.js" type="text/javascript"></script>
+    <!-- Bootstrap core js -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
-        <script src="https://decsitefinitycdn.blob.core.windows.net/sdk/telerik-dec-client.min.1.0.0.121.js" type="text/javascript"></script>
+    <script src="https://dec.azureedge.net/sdk/telerik-dec-client.min.1.2.2.js" type="text/javascript"></script>
 
-        <script>
-            var testSubject = '614';
-            var testDataSource = 'QuantumDecDemo';
-            var decClient = new sfDataIntell.Client({
-                apiKey: '<please paste the apiKey of you datacenter here>',
-                authToken: 'appauth <please paste the apiKey of you datacenter here>', // 'appauth <data_center_application_key>' or 'appauth <data_center_api_key>'
-                source: testDataSource,
-                autoTracking: false,
-                subjectKey: testSubject
-            });
-        </script>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
 
-        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-        <!--[if lt IE 9]>
-            <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-            <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-        <![endif]-->
-        </head>
+    <script>
+        var testDataSource = 'QuantumDecDemo';
+        var subjectKey = null; // '<please paste the unique guid of the current user or leave as NULL to auto generate one>'
+        var decClient = new sfDataIntell.Client({
+            apiKey: '<please paste the apiKey of you datacenter here>',
+            authToken: 'appauth <data_center_application_key> or appauth <data_center_api_key>',
+            source: testDataSource,
+            trackPageVisits: true,
+            subjectKey: subjectKey,
+            instrument: true
+        });
 
-    <body>
+        var subjectMetadata = {
+            'FirstName': 'John',
+            'LastName': 'Wick',
+            'Email': 'john.wick@progress.com'
+        };
+        decClient.subjectMetadataClient.writeSubjectMetadata(subjectMetadata);
+    </script>
+</head>
 
-    <div class="container">
+<body>
 
-        <div class="jumbotron">
-            <h1>Custom Personalization</h1>
-            <p class="lead"><a href="http://www.sitefinity.com/digital-experience-cloud">Digital Experience Cloud</a> SDK for JavaScript</p>
-            <p>
-                <a id="btn-modal-personas" class="btn btn-lg btn-success" href="#" role="button">By Persona</a>
-                <a id="btn-modal-campaigns" class="btn btn-lg btn-success" href="#" role="button">By Campaign</a>
-                <a id="btn-modal-leads" class="btn btn-lg btn-success" href="#" role="button">By Lead Scoring</a>
-            </p>
-        </div>
+<div class="container">
 
-        <div class="row marketing">
+    <div class="jumbotron">
+        <h1>Custom Personalization</h1>
+        <p class="lead"><a href="http://www.sitefinity.com/digital-experience-cloud">Progress Sitefinity Digital Experience Cloud</a> SDK
+            for JavaScript</p>
+        <p>Click one of the following to contribute to specific Touchpoints</p>
+        <p>
+            <a id="btn-touchpoint-1" class="btn btn-lg btn-info" href="#" role="button"
+               sfdi-trigger="click" sfdi-predicate="Visit" sfdi-object="First button">
+                First
+            </a>
+            <a id="btn-touchpoint-2" class="btn btn-lg btn-info" href="#" role="button"
+               sfdi-trigger="click" sfdi-predicate="Visit" sfdi-object="Second button">
+                Second
+            </a>
+            <a id="btn-touchpoint-3" class="btn btn-lg btn-info" href="#" role="button"
+               sfdi-trigger="click" sfdi-predicate="Visit" sfdi-object="Third button">
+                Third
+            </a>
+        </p>
+        <p>
+            <a id="btn-modal-personas" class="btn btn-lg btn-success" href="#" role="button">By Persona</a>
+            <a id="btn-modal-campaigns" class="btn btn-lg btn-success" href="#" role="button">By Campaign</a>
+            <a id="btn-modal-leads" class="btn btn-lg btn-success" href="#" role="button">By Lead Scoring</a>
+        </p>
+    </div>
+
+    <div class="row marketing">
         <div class="col-lg-6">
             <h4>Customer Journey Analysis</h4>
-            <p>The Sitefinity Digital Experience Cloud measures exactly how your marketing efforts are contributing to goals such as revenue or growing your sales pipeline.  The analytics engine provides a unified view of goal status, while the embedded marketing attribution reports tell you exactly where you’re hitting a home run and where you’re striking out. <a href="http://www.sitefinity.com/customer-journey-analysis">Learn More</a></p>
+            <p>The Sitefinity Digital Experience Cloud measures exactly how your marketing efforts are contributing to
+                goals such as revenue or growing your sales pipeline. The analytics engine provides a unified view of
+                goal status, while the embedded marketing attribution reports tell you exactly where you’re hitting a
+                home run and where you’re striking out. <a href="http://www.sitefinity.com/customer-journey-analysis">Learn
+                    More</a></p>
         </div>
 
         <div class="col-lg-6">
             <h4>Customer Journey Personalization</h4>
-            <p>Connecting an insight to an automated process like personalization helps you make the most of each opportunity that Big Data may uncover. The Sitefinity Digital Experience Cloud enables you to find hidden marketing potential through predictive analytics, but it also enables you to act upon this insight through personalized experiences that take each visitor to his or her individual “Best Next Experience” determined to increase their conversion potential. <a href="http://www.sitefinity.com/customer-journey-personalization">Learn More</a></p>
+            <p>Connecting an insight to an automated process like personalization helps you make the most of each
+                opportunity that Big Data may uncover. The Sitefinity Digital Experience Cloud enables you to find
+                hidden marketing potential through predictive analytics, but it also enables you to act upon this
+                insight through personalized experiences that take each visitor to his or her individual “Best Next
+                Experience” determined to increase their conversion potential. <a
+                        href="http://www.sitefinity.com/customer-journey-personalization">Learn More</a></p>
         </div>
-        </div>
+    </div>
 
-        <!-- Modal Personas -->
-        <div class="modal fade" id="modal-personas" role="dialog">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Persona based personalization</h4>
-                    </div>
-                    <div class="modal-body">
-                        <p id="persona-business-user" style="display: none;">You are recognized as 'Business User' persona.</p>
-                        <p id="not-business-user">You are NOT recognized as 'Business User' persona.</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    </div>
+    <!-- Modal Personas -->
+    <div class="modal fade" id="modal-personas" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Persona based personalization</h4>
+                </div>
+                <div class="modal-body">
+                    <p id="persona-business-user" style="display: none;">You are recognized as 'Business User'
+                        persona.</p>
+                    <p id="not-business-user">You are NOT recognized as 'Business User' persona.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
+    </div>
 
-        <!-- Modal Campaigns -->
-        <div class="modal fade" id="modal-campaigns" role="dialog">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Campaign personalization</h4>
-                    </div>
-                    <div class="modal-body">
-                        <p id="campaigns-not-in">You are NOT in 'Improve positioning of Quantum for Business' campaign.</p>
-                        <p id="campaigns-in" style="display: none;">The current user is targeted from 'Improve positioning of Quantum for Business' campaign.</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    </div>
+    <!-- Modal Campaigns -->
+    <div class="modal fade" id="modal-campaigns" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Campaign personalization</h4>
+                </div>
+                <div class="modal-body">
+                    <p id="campaigns-not-in">You are NOT in 'Improve positioning of Quantum for Business' campaign.</p>
+                    <p id="campaigns-in" style="display: none;">The current user is targeted from 'Improve positioning
+                        of Quantum for Business' campaign.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
+    </div>
 
-        <!-- Modal Leads -->
-        <div class="modal fade" id="modal-leads" role="dialog">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Lead Score based personalization</h4>
-                    </div>
-                    <div class="modal-body">
+    <!-- Modal Leads -->
+    <div class="modal fade" id="modal-leads" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Lead Score based personalization</h4>
+                </div>
+                <div class="modal-body">
 
-                        <ul class="list-group">
-                            <p id="leads-no-in-39">You don't match into Lead with id 39 (Enterprise Lead Scoring)</p>
-                            <p id="leads-in-39">
-                                Passed first threshold with score <span id="leads-in-39-score"></span> at <span id="leads-in-39-date"></span>
-                            </p>
-                        </ul>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    </div>
+                    <ul class="list-group">
+                        <p id="leads-no-in-39">You don't match into any of the Leads.</p>
+                        <p id="leads-in-39">
+                            Passed first threshold with score <span id="leads-in-39-score"></span> at <span
+                                id="leads-in-39-date"></span>
+                        </p>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
+    </div>
 
-        <script>
-            $(function() {
+    <footer class="footer">
+        <p>&copy; TELERIK 2015 | Narrow Jumbotron Template for Bootstrap</p>
+    </footer>
+</div> <!-- /container -->
 
-                $('#btn-modal-personas').click(function () {
+<script>
+    $(function () {
+        $('#btn-modal-personas').click(function () {
+            var doneCallback = function (data, textStatus, jqXHR) {
+                var items = JSON.parse(data.response).items;
+                if (items && items.length) {
+                    $('#persona-business-user').show();
+                    $('#not-business-user').hide();
+                } else {
+                    $('#persona-business-user').hide();
+                    $('#not-business-user').show();
+                }
+                $('#modal-personas').modal('toggle');
+            };
+            var failCallback = function (jqXHR, textStatus, errorThrown) {
+                if (console && console.log) {
+                    console.log(jqXHR.responseText);
+                }
+            };
 
-                    var doneCallback = function (data, textStatus, jqXHR ) {
-                        if (data && data.items) {
-                            $.each(data.items, function(key, value) {
-                                if (data.items[key].Id === 1) {
-                                    $('#persona-business-user').show();
-                                    $('#not-business-user').hide();
-                                    return;
-                                }
-                            });
-                            $('#modal-personas').modal('toggle');
+            var scoringIds = []; // [12,15,16]; If you want to check for specific personas, type their ids as an array of numbers
+            decClient.personalizationClient.isInPersonas(scoringIds, doneCallback, failCallback, subjectKey);
+        });
+
+        $('#btn-modal-campaigns').click(function () {
+            var doneCallback = function (data, textStatus, jqXHR) {
+                var responseIds = JSON.parse(data.response);
+                if (responseIds && responseIds.length) {
+                    $.each(responseIds, function (key, value) {
+                        if (campaignIds[0] === value) {
+                            $('#campaigns-in').show();
+                            $('#campaigns-not-in').hide();
+                            return;
                         }
-                    };
-                    var failCallback = function (jqXHR, textStatus, errorThrown) {
-                        if (console && console.log) {
-                            console.log(jqXHR.responseText);
-                        }
-                    };
+                    });
+                    $('#modal-campaigns').modal('toggle');
+                }
+            };
+            var failCallback = function (jqXHR, textStatus, errorThrown) {
+                if (console && console.log) {
+                    console.log(jqXHR.responseText);
+                }
+            };
 
-                    var scoringIds = '1,3,4';
-                    decClient.personalizationClient.isInPersonas(scoringIds, doneCallback, failCallback, testSubject);
+            var campaignIds = []; // '[28, 30]; If you want to check for specific campaigns, type their ids as an array of numbers
+            decClient.personalizationClient.isInCampaigns(campaignIds, doneCallback, failCallback);
+        });
 
-                });
+        $('#btn-modal-leads').click(function () {
 
-                $('#btn-modal-campaigns').click(function () {
+            var doneCallback = function (data, textStatus, jqXHR) {
+                var items = JSON.parse(data.response).items;
+                if (items && items.length) {
+                    $('#leads-no-in-39').hide();
+                    $('#leads-in-39').show();
 
-                    var doneCallback = function (data, textStatus, jqXHR ) {
-                        if (data) {
-                            $.each(data, function(key, value) {
-                                if (data[key] === campaignIds) {
-                                    $('#campaigns-in').show();
-                                    $('#campaigns-not-in').hide();
-                                    return;
-                                }
-                            });
-                            $('#modal-campaigns').modal('toggle');
-                        }
-                    };
-                    var failCallback = function (jqXHR, textStatus, errorThrown) {
-                        if (console && console.log) {
-                            console.log(jqXHR.responseText);
-                        }
-                    };
+                    $('#leads-in-39-score').html(items[0].Score);
+                    $('#leads-in-39-date').html(items[0].Levels[0].ThresholdPassedOn);
+                } else{
+                    $('#leads-no-in-39').show();
+                    $('#leads-in-39').hide();
+                }
+                $('#modal-leads').modal('toggle');
+            };
+            var failCallback = function (jqXHR, textStatus, errorThrown) {
+                if (console && console.log) {
+                    console.log(jqXHR.responseText);
+                }
+            };
 
-                    var campaignIds = '59';
-                    decClient.personalizationClient.isInCampaigns(campaignIds, doneCallback, failCallback);
-
-                });
-
-                $('#btn-modal-leads').click(function () {
-
-                    var doneCallback = function (data, textStatus, jqXHR ) {
-                        if (data) {
-                            $('#leads-no-in-39').hide();
-                            $('#leads-in-39').show();
-                            if (data.length > 0) {
-                                $('#leads-in-39-score').html(data[0].Leads[0].Score);
-                                $('#leads-in-39-date').html(data[0].Leads[0].Levels[0].PassedOn);
-                            }
-
-                            $('#modal-leads').modal('toggle');
-                        }
-                    };
-                    var failCallback = function (jqXHR, textStatus, errorThrown) {
-                        if (console && console.log) {
-                            console.log(jqXHR.responseText);
-                        }
-                    };
-
-                    var scoringIds = '39';
-                    var contactsDetailsJSON = '{"' + testDataSource + '":["' + testSubject + '"]}';
-                    decClient.personalizationClient.isInLeads(scoringIds, contactsDetailsJSON, doneCallback, failCallback);
-
-                });
-
-            });
-        </script>
-
-        <footer class="footer">
-            <p>&copy; TELERIK 2015 | Narrow Jumbotron Template for Bootstrap</p>
-        </footer>
-
-    </div> <!-- /container -->
-
-    </body>
+            var scoringIds = []; // [12,15,16]; If you want to check specific for leads, type their ids as an array of numbers
+            // Deprecated!!!
+            // decClient.personalizationClient.isInLeads(scoringIds, contactsDetailsJSON, doneCallback, failCallback);
+            decClient.v2.personalizationClient.isInLeads(scoringIds, doneCallback, failCallback, subjectKey);
+        });
+    });
+</script>
+</body>
 </html>
