@@ -31,17 +31,16 @@
         var subjectKey = null; // '<please paste the unique guid of the current user or leave as NULL to auto generate one>'
         var decClient = new sfDataIntell.Client({
             apiKey: '<please paste the apiKey of you datacenter here>',
-            authToken: 'appauth <data_center_application_key> or appauth <data_center_api_key>',
+            authToken: 'appauth <data_center_api_key>',
             source: testDataSource,
             trackPageVisits: true,
             subjectKey: subjectKey,
             instrument: true
         });
-
         var subjectMetadata = {
             'FirstName': 'John',
-            'LastName': 'Wick',
-            'Email': 'john.wick@progress.com'
+            'LastName': 'Doe',
+            'Email': 'john.doe@progress.com'
         };
         decClient.subjectMetadataClient.writeSubjectMetadata(subjectMetadata);
     </script>
@@ -50,200 +49,210 @@
 <body>
 
 <div class="container">
-
     <div class="jumbotron">
         <h1>Custom Personalization</h1>
         <p class="lead"><a href="http://www.sitefinity.com/digital-experience-cloud">Progress Sitefinity Digital Experience Cloud</a> SDK
             for JavaScript</p>
-        <p>Click one of the following to contribute to specific Touchpoints</p>
-        <p>
-            <a id="btn-touchpoint-1" class="btn btn-lg btn-info" href="#" role="button"
-               sfdi-trigger="click" sfdi-predicate="Visit" sfdi-object="First button">
-                First
-            </a>
-            <a id="btn-touchpoint-2" class="btn btn-lg btn-info" href="#" role="button"
-               sfdi-trigger="click" sfdi-predicate="Visit" sfdi-object="Second button">
-                Second
-            </a>
-            <a id="btn-touchpoint-3" class="btn btn-lg btn-info" href="#" role="button"
-               sfdi-trigger="click" sfdi-predicate="Visit" sfdi-object="Third button">
-                Third
-            </a>
-        </p>
-        <p>
-            <a id="btn-modal-personas" class="btn btn-lg btn-success" href="#" role="button">By Persona</a>
-            <a id="btn-modal-campaigns" class="btn btn-lg btn-success" href="#" role="button">By Campaign</a>
-            <a id="btn-modal-leads" class="btn btn-lg btn-success" href="#" role="button">By Lead Scoring</a>
-        </p>
     </div>
 
-    <div class="row marketing">
-        <div class="col-lg-6">
-            <h4>Customer Journey Analysis</h4>
-            <p>The Sitefinity Digital Experience Cloud measures exactly how your marketing efforts are contributing to
-                goals such as revenue or growing your sales pipeline. The analytics engine provides a unified view of
-                goal status, while the embedded marketing attribution reports tell you exactly where you’re hitting a
-                home run and where you’re striking out. <a href="http://www.sitefinity.com/customer-journey-analysis">Learn
-                    More</a></p>
+    <h3>You can personalize your page by the following criteria: </h3>
+    <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#persona">By Persona</a></li>
+        <li><a data-toggle="tab" href="#campaign">By Campaign</a></li>
+        <li><a data-toggle="tab" href="#lead">By Lead</a></li>
+    </ul>
+
+    <div class="tab-content">
+        <div id="persona" class="by-persona tab-pane fade in active row">
+            <div class="col-sm-6">
+                <div class="col-sm-12">
+                    <p>Use the following button to simulate <b>"Visit Dev documentation page"</b> Interaction and contribute 60 points to the <b>"Dev user"</b> Persona</p>
+                </div>
+                <div class="col-sm-12">
+                    <a id="btn-touchpoint-persona" class="btn btn-lg btn-info" href="#" role="button"
+                        sfdi-trigger="click" sfdi-predicate="Visit" sfdi-object="Dev documentation page">
+                        Simulate action
+                    </a>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <h4>Personalized Area by Persona</h4>
+                <div class="result-content">
+                    <h4 class="result-header">Result</h4>
+
+                    <h3 id="in-persona">You are recognized as a <b>Dev user</b> Persona</h3>
+                    <h3 id="not-in-persona">You are <b>NOT</b> recognized as a Dev user Persona</h3>
+                </div>
+            </div>
         </div>
 
-        <div class="col-lg-6">
-            <h4>Customer Journey Personalization</h4>
-            <p>Connecting an insight to an automated process like personalization helps you make the most of each
-                opportunity that Big Data may uncover. The Sitefinity Digital Experience Cloud enables you to find
-                hidden marketing potential through predictive analytics, but it also enables you to act upon this
-                insight through personalized experiences that take each visitor to his or her individual “Best Next
-                Experience” determined to increase their conversion potential. <a
-                        href="http://www.sitefinity.com/customer-journey-personalization">Learn More</a></p>
-        </div>
-    </div>
+        <div id="campaign" class="by-campaign tab-pane fade row">
+            <div class="col-sm-6 campaign-conversion">
+                <p>Use the following button to simulate a <b>"Register User"</b> interaction which will make you targeted by <b>"Download demo by registered users"</b> campaign.</p>
+                <a id="btn-campaign-conversion" class="btn btn-lg btn-info col" href="#" role="button"
+                   sfdi-trigger="click" sfdi-predicate="Register" sfdi-object="User">
+                    Simulate action
+                </a>
+            </div>
+            <div class="col-sm-6">
+                <div class="col-sm-12">
+                    <h4>Personalized Area by Campaign</h4>
+                </div>
 
-    <!-- Modal Personas -->
-    <div class="modal fade" id="modal-personas" role="dialog">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Persona based personalization</h4>
+                <div class="result-content col-sm-12">
+                    <h4 class="result-header">Result</h4>
+                    <div id="in-campaign">
+                        <p>You are targeted by <b>"Download demo by registered users"</b> campaign</p>
+                        <p>Click the following button simulate <b>"Visit Demo page"</b> interaction in order to engage and end the targeting by the campaign</p>
+                        <a id="btn-engage-campaign" class="btn btn-lg btn-info" href="#" role="button"
+                           sfdi-trigger="click" sfdi-predicate="Visit" sfdi-object="Demo page">
+                            Simulate action
+                        </a>
+                    </div>
+                    <p id="not-in-campaign">You are NOT targeted by <b>"Download demo by registered users"</b> campaign</p>
                 </div>
-                <div class="modal-body">
-                    <p id="persona-business-user" style="display: none;">You are recognized as 'Business User'
-                        persona.</p>
-                    <p id="not-business-user">You are NOT recognized as 'Business User' persona.</p>
+            </div>
+        </div>
+
+        <div id="lead" class="by-lead tab-pane fade row">
+            <div class="col-sm-12">
+                <h4>Use the following buttons to contribute different points to the "Demo" lead scoring</h4>
+            </div>
+            <div class="col-sm-6">
+                <div class="actions">
+                    <p>Register Account (1 point):</p>
+                    <a id="btn-lead-cold" class="btn btn-lg btn-info" href="#" role="button"
+                       sfdi-trigger="click" sfdi-predicate="Register" sfdi-object="Account">
+                        Simulate action
+                    </a>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <div class="actions">
+                    <p>Visit Product page (10 points):</p>
+                    <a id="btn-lead-engaged" class="btn btn-lg btn-info" href="#" role="button"
+                       sfdi-trigger="click" sfdi-predicate="Visit" sfdi-object="Product page">
+                        Simulate action
+                    </a>
+                </div>
+                <div class="actions">
+                    <p>Download Product (100 points):</p>
+                    <a id="btn-lead-hot" class="btn btn-lg btn-info" href="#" role="button"
+                       sfdi-trigger="click" sfdi-predicate="Download file" sfdi-object="Product">
+                        Simulate action
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-sm-6">
+                <h4>Personalized area by Lead</h4>
+                <div class="result-content col-sm-12">
+                    <h4 class="result-header">Result</h4>
+                    <p id="not-in-lead">You don't match into any of the Leads.</p>
+                    <div id="in-lead">
+                        <p>Passed: <b><span id="in-lead-threshold"></span> points Level <span id="in-lead-level"></span> threshold</b></p>
+                        <p>Score: <b><span id="in-lead-score"></span> points</b></p>
+                        <p>Threshold passed at: <b><span id="in-lead-date"></span></b></p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Modal Campaigns -->
-    <div class="modal fade" id="modal-campaigns" role="dialog">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Campaign personalization</h4>
-                </div>
-                <div class="modal-body">
-                    <p id="campaigns-not-in">You are NOT in 'Improve positioning of Quantum for Business' campaign.</p>
-                    <p id="campaigns-in" style="display: none;">The current user is targeted from 'Improve positioning
-                        of Quantum for Business' campaign.</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
+    <script>
+        $(function () {
+            var interval = setInterval(function(){
+                checkIsInPersonas();
+                checkIsInCampaign();
+                checkIsInLeads();
+            }, 1000);
 
-    <!-- Modal Leads -->
-    <div class="modal fade" id="modal-leads" role="dialog">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Lead Score based personalization</h4>
-                </div>
-                <div class="modal-body">
+            var checkIsInPersonas = function () {
+                var doneCallback = function (data, textStatus, jqXHR) {
+                    var items = JSON.parse(data.response).items;
+                    if (items && items.length) {
+                        $('#in-persona').show();
+                        $('#not-in-persona').hide();
+                    } else {
+                        $('#in-persona').hide();
+                        $('#not-in-persona').show();
+                    }
+                };
+                var failCallback = function (jqXHR, textStatus, errorThrown) {
+                    if (console && console.log) {
+                        console.log(jqXHR.responseText);
+                    }
+                };
 
-                    <ul class="list-group">
-                        <p id="leads-no-in-39">You don't match into any of the Leads.</p>
-                        <p id="leads-in-39">
-                            Passed first threshold with score <span id="leads-in-39-score"></span> at <span
-                                id="leads-in-39-date"></span>
-                        </p>
-                    </ul>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
+                var scoringIds = [47]; // [], Enter the Persona id you want to check. You can check multiple ids or leave it empty in order to check all the Personas
+                decClient.personalizationClient.isInPersonas(scoringIds, doneCallback, failCallback, subjectKey);
+            };
+
+            var checkIsInCampaign = function () {
+                var doneCallback = function (data, textStatus, jqXHR) {
+                    var responseIds = JSON.parse(data.response);
+                    if (responseIds && responseIds.length) {
+                        $.each(responseIds, function (key, value) {
+                            if (campaignIds[0] === value) {
+                                $('#in-campaign').show();
+                                $('#not-in-campaign').hide();
+                                return;
+                            }
+                        });
+                    } else {
+                        $('#in-campaign').hide();
+                        $('#not-in-campaign').show();
+                    }
+                };
+                var failCallback = function (jqXHR, textStatus, errorThrown) {
+                    if (console && console.log) {
+                        console.log(jqXHR.responseText);
+                    }
+                };
+
+                var campaignIds = [46]; // '[28, 30]; To check for specific campaigns, type their ids as an array of numbers
+                decClient.personalizationClient.isInCampaigns(campaignIds, doneCallback, failCallback);
+            };
+
+            var checkIsInLeads = function () {
+                var doneCallback = function (data, textStatus, jqXHR) {
+                    var items = JSON.parse(data.response).items;
+                    if (items && items.length) {
+                        for(var i = 0; i < items[0].Levels.length; i += 1){
+                            if (items[0].Levels[i].ThresholdPassedOn){
+                                $('#in-lead-level').html(i + 1);
+                                $('#in-lead-threshold').html(items[0].Levels[i].Threshold);
+                                $('#in-lead-date').html(new Date(items[0].Levels[i].ThresholdPassedOn).toDateString());
+                                break;
+                            }
+                        }
+                        $('#in-lead-score').html(items[0].Score);
+
+                        $('#not-in-lead').hide();
+                        $('#in-lead').show();
+                    } else {
+                        $('#not-in-lead').show();
+                        $('#in-lead').hide();
+                    }
+                };
+                var failCallback = function (jqXHR, textStatus, errorThrown) {
+                    if (console && console.log) {
+                        console.log(jqXHR.responseText);
+                    }
+                };
+
+                var scoringIds = [47]; // Enter the lead scoring id you want to check. You can check multiple ids or leave it empty in order to check all the Lead scorings.
+
+                // Deprecated! Do not use!
+                // decClient.personalizationClient.isInLeads(scoringIds, contactsDetailsJSON, doneCallback, failCallback);
+                decClient.v2.personalizationClient.isInLeads(scoringIds, doneCallback, failCallback, subjectKey);
+            };
+        });
+    </script>
 
     <footer class="footer">
         <p>&copy; TELERIK 2015 | Narrow Jumbotron Template for Bootstrap</p>
     </footer>
+
 </div> <!-- /container -->
 
-<script>
-    $(function () {
-        $('#btn-modal-personas').click(function () {
-            var doneCallback = function (data, textStatus, jqXHR) {
-                var items = JSON.parse(data.response).items;
-                if (items && items.length) {
-                    $('#persona-business-user').show();
-                    $('#not-business-user').hide();
-                } else {
-                    $('#persona-business-user').hide();
-                    $('#not-business-user').show();
-                }
-                $('#modal-personas').modal('toggle');
-            };
-            var failCallback = function (jqXHR, textStatus, errorThrown) {
-                if (console && console.log) {
-                    console.log(jqXHR.responseText);
-                }
-            };
-
-            var scoringIds = []; // [12,15,16]; If you want to check for specific personas, type their ids as an array of numbers
-            decClient.personalizationClient.isInPersonas(scoringIds, doneCallback, failCallback, subjectKey);
-        });
-
-        $('#btn-modal-campaigns').click(function () {
-            var doneCallback = function (data, textStatus, jqXHR) {
-                var responseIds = JSON.parse(data.response);
-                if (responseIds && responseIds.length) {
-                    $.each(responseIds, function (key, value) {
-                        if (campaignIds[0] === value) {
-                            $('#campaigns-in').show();
-                            $('#campaigns-not-in').hide();
-                            return;
-                        }
-                    });
-                    $('#modal-campaigns').modal('toggle');
-                }
-            };
-            var failCallback = function (jqXHR, textStatus, errorThrown) {
-                if (console && console.log) {
-                    console.log(jqXHR.responseText);
-                }
-            };
-
-            var campaignIds = []; // '[28, 30]; If you want to check for specific campaigns, type their ids as an array of numbers
-            decClient.personalizationClient.isInCampaigns(campaignIds, doneCallback, failCallback);
-        });
-
-        $('#btn-modal-leads').click(function () {
-
-            var doneCallback = function (data, textStatus, jqXHR) {
-                var items = JSON.parse(data.response).items;
-                if (items && items.length) {
-                    $('#leads-no-in-39').hide();
-                    $('#leads-in-39').show();
-
-                    $('#leads-in-39-score').html(items[0].Score);
-                    $('#leads-in-39-date').html(items[0].Levels[0].ThresholdPassedOn);
-                } else{
-                    $('#leads-no-in-39').show();
-                    $('#leads-in-39').hide();
-                }
-                $('#modal-leads').modal('toggle');
-            };
-            var failCallback = function (jqXHR, textStatus, errorThrown) {
-                if (console && console.log) {
-                    console.log(jqXHR.responseText);
-                }
-            };
-
-            var scoringIds = []; // [12,15,16]; If you want to check specific for leads, type their ids as an array of numbers
-            // Deprecated!!!
-            // decClient.personalizationClient.isInLeads(scoringIds, contactsDetailsJSON, doneCallback, failCallback);
-            decClient.v2.personalizationClient.isInLeads(scoringIds, doneCallback, failCallback, subjectKey);
-        });
-    });
-</script>
 </body>
 </html>

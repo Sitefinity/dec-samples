@@ -4,9 +4,14 @@ body {
   padding-bottom: 20px;
 }
 
+.jumbotron h1 {
+  font-size: 36px;
+}
+
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
 .marketing,
+.personalized,
 .footer {
   padding-right: 15px;
   padding-left: 15px;
@@ -76,4 +81,55 @@ body {
   .jumbotron {
     border-bottom: 0;
   }
+}
+
+#in-persona {
+  display: none;
+  background-color: lightgreen;
+}
+
+#in-campaign {
+  display: none;
+}
+
+#in-lead {
+  display: none;
+  text-align: left;
+}
+
+.tab-pane {
+  margin: 10px;
+  padding-top: 10px;
+  text-align: center;
+}
+
+.result-content {
+  height: 300px;
+  border: 2px groove #ddd;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.result-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.actions {
+margin-top: 20px;
+}
+
+.actions p {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.actions a {
+  margin: 5px;
+}
+
+.campaign-conversion {
+  margin-top: 20px;
 }
