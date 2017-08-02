@@ -70,10 +70,11 @@
         <div id="campaign" class="by-campaign tab-pane fade row">
             <div class="col-sm-6 campaign-conversion">
                 <p>Use the following button to simulate a <b>"Register User"</b> interaction which will make you targeted by <b>"Download demo by registered users"</b> campaign.</p>
-                <a id="btn-campaign-conversion" class="btn btn-lg btn-info col" href="#" role="button"
+                <a id="btn-campaign-conversion" class="btn btn-lg btn-info" href="#" role="button"
                    sfdi-trigger="click" sfdi-predicate="Register" sfdi-object="User">
                     Simulate action
                 </a>
+                <p><b>Note:</b> If you have already went through the campaign with this subject you won't be targeted any more!</p>
             </div>
             <div class="col-sm-6">
                 <div class="col-sm-12">
@@ -129,7 +130,7 @@
                     <h4 class="result-header">Result</h4>
                     <p id="not-in-lead">You don't match into any of the Leads.</p>
                     <div id="in-lead">
-                        <p>Passed: <b><span id="in-lead-threshold"></span> points Level <span id="in-lead-level"></span> threshold</b></p>
+                        <p>Passed: <b>Stage <span id="in-lead-level"></span> - <span id="in-lead-threshold"></span> points threshold</b></p>
                         <p>Score: <b><span id="in-lead-score"></span> points</b></p>
                         <p>Threshold passed at: <b><span id="in-lead-date"></span></b></p>
                     </div>
@@ -140,10 +141,10 @@
 
     <script> // Dec client initialization
         var testDataSource = 'QuantumDecDemo';
-        var subjectKey = null; // '<please paste the unique guid of the current user or leave as NULL to auto generate one>'
+        var subjectKey = '164f2d19-4724-4de4-ac2c-50b06f9a6ab7'; // '<please paste the unique guid of the current user or leave as NULL to auto generate one>'
         var decClient = new sfDataIntell.Client({
-            apiKey: '0a67e850-b53c-87b1-e5ea-ebe0d980b5e4',
-            authToken: 'appauth 8196DA0C-1CCE-F081-A55A-EAD699711529',
+            apiKey: '<please paste the apiKey of you datacenter here>',
+            authToken: 'appauth <please paste the access token of your datacenter here>',
             source: testDataSource,
             trackPageVisits: true,
             subjectKey: subjectKey,
@@ -151,8 +152,8 @@
         });
         var subjectMetadata = {
             'FirstName': 'John',
-            'LastName': 'Vel',
-            'Email': 'john.vel@progress.com'
+            'LastName': 'Doe',
+            'Email': 'john.doe@progress.com'
         };
         decClient.subjectMetadataClient.writeSubjectMetadata(subjectMetadata);
     </script>
@@ -218,7 +219,7 @@
                     if (items && items.length) {
                         for(var i = 0; i < items[0].Levels.length; i += 1){
                             if (items[0].Levels[i].ThresholdPassedOn){
-                                $('#in-lead-level').html(i + 1);
+                                $('#in-lead-level').html(3 - i);
                                 $('#in-lead-threshold').html(items[0].Levels[i].Threshold);
                                 $('#in-lead-date').html(new Date(items[0].Levels[i].ThresholdPassedOn).toDateString());
                                 break;
