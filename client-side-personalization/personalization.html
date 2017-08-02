@@ -25,25 +25,6 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-
-    <script>
-        var testDataSource = 'QuantumDecDemo';
-        var subjectKey = null; // '<please paste the unique guid of the current user or leave as NULL to auto generate one>'
-        var decClient = new sfDataIntell.Client({
-            apiKey: '<please paste the apiKey of you datacenter here>',
-            authToken: 'appauth <data_center_api_key>',
-            source: testDataSource,
-            trackPageVisits: true,
-            subjectKey: subjectKey,
-            instrument: true
-        });
-        var subjectMetadata = {
-            'FirstName': 'John',
-            'LastName': 'Doe',
-            'Email': 'john.doe@progress.com'
-        };
-        decClient.subjectMetadataClient.writeSubjectMetadata(subjectMetadata);
-    </script>
 </head>
 
 <body>
@@ -156,6 +137,25 @@
             </div>
         </div>
     </div>
+
+    <script> // Dec client initialization
+        var testDataSource = 'QuantumDecDemo';
+        var subjectKey = null; // '<please paste the unique guid of the current user or leave as NULL to auto generate one>'
+        var decClient = new sfDataIntell.Client({
+            apiKey: '0a67e850-b53c-87b1-e5ea-ebe0d980b5e4',
+            authToken: 'appauth 8196DA0C-1CCE-F081-A55A-EAD699711529',
+            source: testDataSource,
+            trackPageVisits: true,
+            subjectKey: subjectKey,
+            instrument: true
+        });
+        var subjectMetadata = {
+            'FirstName': 'John',
+            'LastName': 'Vel',
+            'Email': 'john.vel@progress.com'
+        };
+        decClient.subjectMetadataClient.writeSubjectMetadata(subjectMetadata);
+    </script>
 
     <script>
         $(function () {
