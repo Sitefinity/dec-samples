@@ -5,12 +5,11 @@ The purpose of this application is to demonstrate how the [Progress Sitefinity D
 The first thing one has to do to start using the DEC JavaScript SDK is to create a instance with options object that contains the following information:
 - **source** - represents the data-source that belongs to specific data center. In our case it is set to QuantumDecDemo(only for the sample needs). This value identifies the data collected by this demo application.
 - **subjectKey** - represents the subject that is to be used in each data collection call or personalization call. In most of the cases this is the user id. If this is left empty, the SDK will auto-generate the key.
+**Note: DEC will recognise and map users together if they have different Ids but same emails and vice versa!**
 - **apiKey** - the API key associated with the data-center that is being targeted. 
 - **authToken** - passed as Authorization header. This token is intended to be used by an application so it can authorize in from of the personalization end-points. You can create such a token by going to "Authorized application" situated in the Administration tab of your data center. Concatenate "appauth " string with the generated access token for example: "appauth 97e8b2d2-93ce-cd01-b47b-076a201eab11".
 - **trackPageVisits** - this indicates whether out-of-the-box tracking of page visits will be used.
 - **instrument** - this indicates whether HTML5 instrumentation will be used.
-
-**Note:** If HTML Instrumentation is turned on (```instrument: true```) the initialization script should be executed after the page's body is rendered!
 
 ##### Example:
 ```javascript
@@ -23,9 +22,11 @@ var decClient = new sfDataIntell.Client({
     instrument: true
 });
 ```
+**Note:** _If HTML Instrumentation is turned on (```instrument: true```) the initialization script should be executed after the page's body is rendered!_
 
 #### Additional configuration
 The sample contains an object variable "subjectMetadata" in which you can input some sample user-specific data like names and email. This is then embedded in interaction and sent to DEC.
+
 ##### Example:
 ```javascript
 var subjectMetadata = {
