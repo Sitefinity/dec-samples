@@ -33,7 +33,6 @@ body {
 .footer {
   padding-top: 19px;
   color: #777;
-  border-top: 1px solid #e5e5e5;
 }
 
 /* Customize container */
@@ -137,4 +136,8 @@ margin-top: 20px;
 #btn-campaign-conversion {
   margin-top: 10px;
   margin-bottom: 20px;
+}
+
+.settings-item {
+    margin-top: 20px;
 }

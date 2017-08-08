@@ -18,7 +18,8 @@
     <!-- Bootstrap core js -->
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
-    <script src="https://dec.azureedge.net/sdk/telerik-dec-client.min.1.2.2.js" type="text/javascript"></script>
+    <!--<script src="https://dec.azureedge.net/sdk/telerik-dec-client.min.1.2.2.js" type="text/javascript"></script>-->
+    <script src="telerik-dec-client.1.2.2.js" type="text/javascript"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -32,7 +33,8 @@
 <div class="container">
     <div class="jumbotron">
         <h1>Custom Personalization</h1>
-        <p class="lead"><a href="http://www.sitefinity.com/digital-experience-cloud">Progress Sitefinity Digital Experience Cloud</a> SDK
+        <p class="lead"><a href="http://www.sitefinity.com/digital-experience-cloud">Progress Sitefinity Digital
+            Experience Cloud</a> SDK
             for JavaScript</p>
     </div>
 
@@ -47,11 +49,12 @@
         <div id="persona" class="by-persona tab-pane fade in active row">
             <div class="col-sm-6">
                 <div class="col-sm-12">
-                    <p>Use the following button to simulate <b>"Visit Dev documentation page"</b> Interaction and contribute 50 points to the <b>"Dev user"</b> Persona</p>
+                    <p>Use the following button to simulate <b>"Visit Dev documentation page"</b> Interaction and
+                        contribute 50 points to the <b>"Dev user"</b> Persona</p>
                 </div>
                 <div class="col-sm-12">
                     <a id="btn-touchpoint-persona" class="btn btn-lg btn-info" href="#" role="button"
-                        sfdi-trigger="click" sfdi-predicate="Visit" sfdi-object="Dev documentation page">
+                       sfdi-trigger="click" sfdi-predicate="Visit" sfdi-object="Dev documentation page">
                         Simulate action
                     </a>
                 </div>
@@ -69,12 +72,14 @@
 
         <div id="campaign" class="by-campaign tab-pane fade row">
             <div class="col-sm-6 campaign-conversion">
-                <p>Use the following button to simulate a <b>"Register User"</b> interaction which will make you targeted by <b>"Download demo by registered users"</b> campaign.</p>
+                <p>Use the following button to simulate a <b>"Register User"</b> interaction which will make you
+                    targeted by <b>"Download demo by registered users"</b> campaign.</p>
                 <a id="btn-campaign-conversion" class="btn btn-lg btn-info" href="#" role="button"
                    sfdi-trigger="click" sfdi-predicate="Register" sfdi-object="User">
                     Simulate action
                 </a>
-                <p><b>Note:</b> If you have already went through the campaign with this subject you won't be targeted any more!</p>
+                <p><b>Note:</b> If you have already went through the campaign with this subject you won't be targeted
+                    any more!</p>
             </div>
             <div class="col-sm-6">
                 <div class="col-sm-12">
@@ -85,13 +90,15 @@
                     <h4 class="result-header">Result</h4>
                     <div id="in-campaign">
                         <p>You are targeted by <b>"Download demo by registered users"</b> campaign</p>
-                        <p>Click the following button simulate <b>"Visit Demo page"</b> interaction in order to engage and end the targeting by the campaign</p>
+                        <p>Click the following button simulate <b>"Visit Demo page"</b> interaction in order to engage
+                            and end the targeting by the campaign</p>
                         <a id="btn-engage-campaign" class="btn btn-lg btn-info" href="#" role="button"
                            sfdi-trigger="click" sfdi-predicate="Visit" sfdi-object="Demo page">
                             Simulate action
                         </a>
                     </div>
-                    <p id="not-in-campaign">You are NOT targeted by <b>"Download demo by registered users"</b> campaign</p>
+                    <p id="not-in-campaign">You are NOT targeted by <b>"Download demo by registered users"</b> campaign
+                    </p>
                 </div>
             </div>
         </div>
@@ -130,7 +137,8 @@
                     <h4 class="result-header">Result</h4>
                     <p id="not-in-lead">You don't match into any of the Leads.</p>
                     <div id="in-lead">
-                        <p>Passed: <b>Stage <span id="in-lead-level"></span> - <span id="in-lead-threshold"></span> points threshold</b></p>
+                        <p>Passed: <b>Stage <span id="in-lead-level"></span> - <span id="in-lead-threshold"></span>
+                            points threshold</b></p>
                         <p>Score: <b><span id="in-lead-score"></span> points</b></p>
                         <p>Threshold passed at: <b><span id="in-lead-date"></span></b></p>
                     </div>
@@ -138,115 +146,145 @@
             </div>
         </div>
     </div>
+    <hr/>
+    <div class="settings row">
+        <div class="col-xs-12">
+            <h3>Additional setup</h3>
+        </div>
+        <div class="settings-item col-xs-12">
+            <div class="col-xs-6">
+                Use the following button to simulate submitting of form data <b>(check "submitFormData" function in the code)</b>:
+            </div>
+            <div class="col-xs-6">
+                <button class="btn btn-lg btn-info" onclick="submitFormData()">Submit form data</button>
+            </div>
+        </div>
+        <div class="settings-item col-xs-12">
+            <div class="col-xs-6">
+                If you want to experience the demo again, you need to delete the cookie that holds your subjectKey and
+                refresh the page :
+            </div>
+            <div class="col-xs-6">
+                <button class="btn btn-lg btn-info" onclick="deleteCookie()">Delete cookie</button>
+            </div>
+        </div>
+    </div>
+    <hr/>
 
     <script> // Dec client initialization
+    </script>
+
+    <script>
         var testDataSource = 'QuantumDecDemo';
-        var subjectKey = '164f2d19-4724-4de4-ac2c-50b06f9a6ab7'; // '<please paste the unique guid of the current user or leave as NULL to auto generate one>'
+        var subjectKey = ''; // '<please paste the unique guid of the current user or leave as NULL/empty to auto generate one>'
         var decClient = new sfDataIntell.Client({
-            apiKey: '<please paste the apiKey of you datacenter here>',
-            authToken: 'appauth <please paste the access token of your datacenter here>',
+            apiKey: '0a67e850-b53c-87b1-e5ea-ebe0d980b5e4',
+            authToken: 'appauth 8196DA0C-1CCE-F081-A55A-EAD699711529',
             source: testDataSource,
             trackPageVisits: true,
             subjectKey: subjectKey,
             instrument: true
         });
-        var subjectMetadata = {
-            'FirstName': 'John',
-            'LastName': 'Doe',
-            'Email': 'john.doe@progress.com'
+
+        var interval = setInterval(function () {
+            checkIsInPersonas();
+            checkIsInCampaign();
+            checkIsInLeads();
+        }, 1000);
+
+        var submitFormData = function () {
+            var subjectMetadata = {
+                'FirstName': 'John',
+                'LastName': 'Doe',
+                'Email': 'john.doe@progress.com'
+            };
+            decClient.subjectMetadataClient.writeSubjectMetadata(subjectMetadata);
         };
-        decClient.subjectMetadataClient.writeSubjectMetadata(subjectMetadata);
-    </script>
 
-    <script>
-        $(function () {
-            var interval = setInterval(function(){
-                checkIsInPersonas();
-                checkIsInCampaign();
-                checkIsInLeads();
-            }, 1000);
+        var deleteCookie = function () {
+            document.cookie = 'sf-data-intell-subject=;path=/; expires=' + new Date().toUTCString();
+        };
 
-            var checkIsInPersonas = function () {
-                var doneCallback = function (data, textStatus, jqXHR) {
-                    var items = JSON.parse(data.response).items;
-                    if (items && items.length) {
-                        $('#in-persona').show();
-                        $('#not-in-persona').hide();
-                    } else {
-                        $('#in-persona').hide();
-                        $('#not-in-persona').show();
-                    }
-                };
-                var failCallback = function (jqXHR, textStatus, errorThrown) {
-                    if (console && console.log) {
-                        console.log(jqXHR.responseText);
-                    }
-                };
-
-                var scoringIds = [47]; // [], Enter the Persona id you want to check. You can check multiple ids or leave it empty in order to check all the Personas
-                decClient.personalizationClient.isInPersonas(scoringIds, doneCallback, failCallback, subjectKey);
+        var checkIsInPersonas = function () {
+            var doneCallback = function (data, textStatus, jqXHR) {
+                var items = data.items;
+                if (items && items.length) {
+                    $('#in-persona').show();
+                    $('#not-in-persona').hide();
+                } else {
+                    $('#in-persona').hide();
+                    $('#not-in-persona').show();
+                }
+            };
+            var failCallback = function (jqXHR, textStatus, errorThrown) {
+                if (console && console.log) {
+                    console.log(jqXHR.responseText);
+                }
             };
 
-            var checkIsInCampaign = function () {
-                var doneCallback = function (data, textStatus, jqXHR) {
-                    var responseIds = JSON.parse(data.response);
-                    if (responseIds && responseIds.length) {
-                        $.each(responseIds, function (key, value) {
-                            if (campaignIds[0] === value) {
-                                $('#in-campaign').show();
-                                $('#not-in-campaign').hide();
-                                return;
-                            }
-                        });
-                    } else {
-                        $('#in-campaign').hide();
-                        $('#not-in-campaign').show();
-                    }
-                };
-                var failCallback = function (jqXHR, textStatus, errorThrown) {
-                    if (console && console.log) {
-                        console.log(jqXHR.responseText);
-                    }
-                };
+            var scoringIds = [14]; // [], Enter the Persona id you want to check. You can check multiple ids or leave it empty in order to check all the Personas
+            decClient.personalizationClient.isInPersonas(scoringIds, doneCallback, failCallback, subjectKey);
+        };
 
-                var campaignIds = [46]; // '[28, 30]; To check for specific campaigns, type their ids as an array of numbers
-                decClient.personalizationClient.isInCampaigns(campaignIds, doneCallback, failCallback);
-            };
-
-            var checkIsInLeads = function () {
-                var doneCallback = function (data, textStatus, jqXHR) {
-                    var items = JSON.parse(data.response).items;
-                    if (items && items.length) {
-                        for(var i = 0; i < items[0].Levels.length; i += 1){
-                            if (items[0].Levels[i].ThresholdPassedOn){
-                                $('#in-lead-level').html(3 - i);
-                                $('#in-lead-threshold').html(items[0].Levels[i].Threshold);
-                                $('#in-lead-date').html(new Date(items[0].Levels[i].ThresholdPassedOn).toDateString());
-                                break;
-                            }
+        var checkIsInCampaign = function () {
+            var doneCallback = function (data, textStatus, jqXHR) {
+                var responseIds = data;
+                if (responseIds && responseIds.length) {
+                    $.each(responseIds, function (key, value) {
+                        if (campaignIds[0] === value) {
+                            $('#in-campaign').show();
+                            $('#not-in-campaign').hide();
+                            return;
                         }
-                        $('#in-lead-score').html(items[0].Score);
-
-                        $('#not-in-lead').hide();
-                        $('#in-lead').show();
-                    } else {
-                        $('#not-in-lead').show();
-                        $('#in-lead').hide();
-                    }
-                };
-                var failCallback = function (jqXHR, textStatus, errorThrown) {
-                    if (console && console.log) {
-                        console.log(jqXHR.responseText);
-                    }
-                };
-
-                var scoringIds = [47]; // Enter the lead scoring id you want to check. You can check multiple ids or leave it empty in order to check all the Lead scorings.
-
-                // Deprecated! Do not use!
-                // decClient.personalizationClient.isInLeads(scoringIds, contactsDetailsJSON, doneCallback, failCallback);
-                decClient.v2.personalizationClient.isInLeads(scoringIds, doneCallback, failCallback, subjectKey);
+                    });
+                } else {
+                    $('#in-campaign').hide();
+                    $('#not-in-campaign').show();
+                }
             };
-        });
+            var failCallback = function (jqXHR, textStatus, errorThrown) {
+                if (console && console.log) {
+                    console.log(jqXHR.responseText);
+                }
+            };
+
+            var campaignIds = [25]; // '[28, 30]; To check for specific campaigns, type their ids as an array of numbers
+            decClient.personalizationClient.isInCampaigns(campaignIds, doneCallback, failCallback);
+        };
+
+        var checkIsInLeads = function () {
+            var doneCallback = function (data, textStatus, jqXHR) {
+                var items = data.items;
+                if (items && items.length) {
+                    for (var i = 0; i < items[0].Levels.length; i += 1) {
+                        if (items[0].Levels[i].ThresholdPassedOn) {
+                            $('#in-lead-level').html(4 - i);
+                            $('#in-lead-threshold').html(items[0].Levels[i].Threshold);
+                            $('#in-lead-date').html(new Date(items[0].Levels[i].ThresholdPassedOn).toDateString());
+                            break;
+                        }
+                    }
+                    $('#in-lead-score').html(items[0].Score);
+
+                    $('#not-in-lead').hide();
+                    $('#in-lead').show();
+                } else {
+                    $('#not-in-lead').show();
+                    $('#in-lead').hide();
+                }
+            };
+            var failCallback = function (jqXHR, textStatus, errorThrown) {
+                if (console && console.log) {
+                    console.log(jqXHR.responseText);
+                }
+            };
+
+            var scoringIds = [17]; // Enter the lead scoring id you want to check. You can check multiple ids or leave it empty in order to check all the Lead scorings.
+
+            // Deprecated! Do not use!
+            // decClient.personalizationClient.isInLeads(scoringIds, contactsDetailsJSON, doneCallback, failCallback);
+            decClient.v2.personalizationClient.isInLeads(scoringIds, doneCallback, failCallback, subjectKey);
+        };
     </script>
 
     <footer class="footer">
