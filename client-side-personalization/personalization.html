@@ -18,8 +18,8 @@
     <!-- Bootstrap core js -->
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
-    <!--<script src="https://dec.azureedge.net/sdk/telerik-dec-client.min.1.2.2.js" type="text/javascript"></script>-->
-    <script src="telerik-dec-client.1.2.2.js" type="text/javascript"></script>
+    <!--TODO: change sdk version after the release of the version-->
+    <script src="https://dec.azureedge.net/sdk/telerik-dec-client.min.1.2.2.js" type="text/javascript"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -178,8 +178,8 @@
         var testDataSource = 'QuantumDecDemo';
         var subjectKey = ''; // '<please paste the unique guid of the current user or leave as NULL/empty to auto generate one>'
         var decClient = new sfDataIntell.Client({
-            apiKey: '0a67e850-b53c-87b1-e5ea-ebe0d980b5e4',
-            authToken: 'appauth 8196DA0C-1CCE-F081-A55A-EAD699711529',
+            apiKey: '<please paste the apiKey of you datacenter here>',
+            authToken: 'appauth <please paste the access token of your datacenter here>',
             source: testDataSource,
             trackPageVisits: true,
             subjectKey: subjectKey,
