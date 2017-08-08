@@ -72,6 +72,9 @@ In order for the application sample to work, specific objects(Persona, Lead scor
 1. Narrow the audience by behaviour, check "Interacted with..." and create "Register User"(created the same way as the rules above) interaction from the advanced menu.
 1. Copy the Campaign Id, which is visible in the url string and use it later when you want to personalize by specific Campaign.
 
+## Tracking
+The tracking of page visits is done automatically by the SDK. In order to track custom interactions in this sample is used our HTML5 instrumentation. For more information about its use and also on different ways to track your audience please check how to [Leverage the JavaScript SDK to capture client side behavior](https://docs.sitefinity.com/dec/api-v2/for-developers-leverage-the-javascript-sdk-to-capture-client-side-behavior) in our documentation pages.
+
 ## Personalization
 The UI has three tabs, in each of them you can test a different kind of personalization. The code can be found at the bottom of the HTML file. It is setup to call the 3 functions every second and update the personalized area. After a successful setup you must be able to simulate different actions/interactions and see the result of those actions in the specified area of the page.
 The JavaScript SDK provides a functionality for personalization by:
