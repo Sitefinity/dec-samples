@@ -78,7 +78,7 @@
                    sfdi-trigger="click" sfdi-predicate="Register" sfdi-object="User">
                     Simulate action
                 </a>
-                <p><b>Note:</b> If you have already went through the campaign with this subject you won't be targeted
+                <p><b>Note:</b> If you have already engaged the campaign and/or converted with this subject you won't be targeted
                     any more!</p>
             </div>
             <div class="col-sm-6">
@@ -153,19 +153,19 @@
         </div>
         <div class="settings-item col-xs-12">
             <div class="col-xs-6">
-                Use the following button to simulate submitting of form data <b>(check "submitFormData" function in the code)</b>:
+                Use the following button to simulate submitting of client data <b>(check "submitClientData" function in the code)</b>. Email being part of the keys would make the client a known contact within DEC.
             </div>
             <div class="col-xs-6">
-                <button class="btn btn-lg btn-info" onclick="submitFormData()">Submit form data</button>
+                <button class="btn btn-lg btn-info" onclick="submitClientData()">Submit client data</button>
             </div>
         </div>
         <div class="settings-item col-xs-12">
             <div class="col-xs-6">
-                If you want to experience the demo again, you need to delete the cookie that holds your subjectKey and
-                refresh the page :
+                If you want to experience the demo again, you need to delete the cookie that holds your subject key and
+                reload the page
             </div>
             <div class="col-xs-6">
-                <button class="btn btn-lg btn-info" onclick="deleteCookie()">Delete cookie</button>
+                <button class="btn btn-lg btn-info" onclick="deleteCookieAndReload()">Delete cookie and reload</button>
             </div>
         </div>
     </div>
@@ -192,7 +192,7 @@
             checkIsInLeads();
         }, 1000);
 
-        var submitFormData = function () {
+        var submitClientData = function () {
             var subjectMetadata = {
                 'FirstName': 'John',
                 'LastName': 'Doe',
@@ -201,8 +201,9 @@
             decClient.subjectMetadataClient.writeSubjectMetadata(subjectMetadata);
         };
 
-        var deleteCookie = function () {
+        var deleteCookieAndReload = function () {
             document.cookie = 'sf-data-intell-subject=;path=/; expires=' + new Date().toUTCString();
+            location.reload();
         };
 
         var checkIsInPersonas = function () {
@@ -256,9 +257,10 @@
             var doneCallback = function (data, textStatus, jqXHR) {
                 var items = data.items;
                 if (items && items.length) {
-                    for (var i = 0; i < items[0].Levels.length; i += 1) {
+                    var levelsCount = items[0].Levels.length;
+                    for (var i = 0; i < levelsCount; i += 1) {
                         if (items[0].Levels[i].ThresholdPassedOn) {
-                            $('#in-lead-level').html(4 - i);
+                            $('#in-lead-level').html(levelsCount - i);
                             $('#in-lead-threshold').html(items[0].Levels[i].Threshold);
                             $('#in-lead-date').html(new Date(items[0].Levels[i].ThresholdPassedOn).toDateString());
                             break;
