@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 using Telerik.DigitalExperienceCloud.Client;
 
 namespace Telerik.DEC.LeadScoringEventClientSample
@@ -8,13 +7,15 @@ namespace Telerik.DEC.LeadScoringEventClientSample
     {
         static void Main(string[] args)
         {
-            string yourApplicationKey = "";
-            AppAccessToken token = new AppAccessToken(Guid.Parse(yourApplicationKey));
+            // Please enter your application access key
+            string applicationAccessKey = "";
+            AppAccessToken token = new AppAccessToken(Guid.Parse(applicationAccessKey));
 
-            string yourDecDataCenterApiKey = "";
+            // Please enter your API key
+            string dataCenterApiKey = ""; 
 
             int checkIntervalInSeconds = 120;
-            using (ILeadScoringEventClient client = new LeadScoringEventClient(token, yourDecDataCenterApiKey, checkIntervalInSeconds))
+            using (ILeadScoringEventClient client = new LeadScoringEventClient(token, dataCenterApiKey, checkIntervalInSeconds))
             {
                 client.Subscribe(ProcessLeadScoringThresholdPasses);
 
