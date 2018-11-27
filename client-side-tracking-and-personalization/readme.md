@@ -84,3 +84,9 @@ The JavaScript SDK provides a functionality for personalization by:
 
 ## Additional information about working with Digital Experience Cloud JavaScript SDK personalization client
 Take a look at [this wiki article](https://github.com/Sitefinity/dec-samples/wiki/DEC-JS-SDK-Personalization-Client).
+
+---
+
+###### Copyright © 2018 Progress Software Corporation and/or one of its subsidiaries or affiliates. All rights reserved.
+
+---

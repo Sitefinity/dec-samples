@@ -112,3 +112,9 @@ At this point of time two tests scenarios are covered using the Mobile Testing. 
 # Summary #
 
 Looking through this sample should give you an idea how you could use the DEC JavaScript SDK for hybrid app development.  It should clarify how to initialize the SDK with the correct set of options. Content personalization based on the Persona Profiling feature is also covered. It also demonstrates how to plug tracking code in various places that could be interesting for you – for example – tracking phone calls shown in the personalization banners, social sharing tracking and various events in the pages. 
+
+---
+
+###### Copyright © 2018 Progress Software Corporation and/or one of its subsidiaries or affiliates. All rights reserved.
+
+---
