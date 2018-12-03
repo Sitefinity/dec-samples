@@ -8,3 +8,9 @@ In order to successfully run the sample the following variables should be filled
 
 - **dataCenterApiKey** - the API key associated with the data-center that is being targeted. It can be find in the Administration part of your data center under API key tab.
 - **applicationAccessKey** - the access key is part of the authentication token needed for the application to authorize itself when calling DEC endpoints. Created in the Administration part of your data center under Authorized application page.
+
+---
+
+###### Copyright © 2018 Progress Software Corporation and/or one of its subsidiaries or affiliates. All rights reserved.
+
+---
