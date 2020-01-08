@@ -9,6 +9,6 @@ A web page demonstrating how  Digital Experience Cloud SDK can be used for clien
 
 ---
 
-###### Copyright © 2018 Progress Software Corporation and/or one of its subsidiaries or affiliates. All rights reserved.
+###### Copyright © 2020 Progress Software Corporation and/or its subsidiaries or affiliates. All Rights Reserved.
 
 ---
