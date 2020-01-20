@@ -47,7 +47,7 @@ namespace Telerik.DEC.LeadScoringEventClientSample
             Console.WriteLine($"An error has occurred while checking for new threshold passes: {errorInfo.Exception.ToString()}");
 
             // Mark the error as handled if you wish for the client to continue working even after an error occurs
-            // If you do not do this, the client will stop reporting new threshold passes when after an error.
+            // If you do not do this, the client will stop reporting new threshold passes after an error.
             errorInfo.Handled = true;
 
             // In case you deem the error critical and want to stop the threshold passes polling, mark the error as not handled
