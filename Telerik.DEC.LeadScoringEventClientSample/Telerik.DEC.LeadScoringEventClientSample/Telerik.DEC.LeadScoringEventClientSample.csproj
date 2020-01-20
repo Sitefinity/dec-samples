@@ -9,10 +9,11 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Telerik.DEC.LeadScoringEventClientSample</RootNamespace>
     <AssemblyName>Telerik.DEC.LeadScoringEventClientSample</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -44,8 +45,8 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="Telerik.DigitalExperienceCloud.Client, Version=2.0.0.1951, Culture=neutral, PublicKeyToken=241a23cf8b6c74c1, processorArchitecture=MSIL">
-      <HintPath>..\packages\Telerik.DigitalExperienceCloud.Client.2.0.0\lib\net40\Telerik.DigitalExperienceCloud.Client.dll</HintPath>
+    <Reference Include="Telerik.DigitalExperienceCloud.Client, Version=3.1.3.46080, Culture=neutral, PublicKeyToken=241a23cf8b6c74c1, processorArchitecture=MSIL">
+      <HintPath>..\packages\Telerik.DigitalExperienceCloud.Client.3.1.3\lib\net472\Telerik.DigitalExperienceCloud.Client.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
