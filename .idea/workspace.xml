@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="d3073737-1fba-437d-92bb-2138b67e204c" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/client-side-tracking-and-personalization/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/client-side-tracking-and-personalization/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side-tracking-and-personalization/personalization.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side-tracking-and-personalization/personalization.html" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/.tmp/" />
+    <ignored path="$PROJECT_DIR$/temp/" />
+    <ignored path="$PROJECT_DIR$/tmp/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Quantum Mobile Hybrid/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="2160">
+                <caret line="119" column="3" selection-start-line="119" selection-start-column="3" selection-end-line="119" selection-end-column="3" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client-side-tracking-and-personalization/LICENSE.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="306">
+                <caret line="4" column="777" selection-start-line="4" selection-start-column="777" selection-end-line="4" selection-end-column="777" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client-side-tracking-and-personalization/personalization.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="157">
+              <caret line="34" column="44" selection-start-line="34" selection-start-column="44" selection-end-line="34" selection-end-column="44" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Telerik.DEC.LeadScoringEventClientSample/LICENSE.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="270">
+                <caret line="15" column="88" selection-start-line="15" selection-start-column="88" selection-end-line="15" selection-end-column="88" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Telerik.DEC.LeadScoringEventClientSample/Telerik.DEC.LeadScoringEventClientSample/Properties/AssemblyInfo.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="126">
+              <caret line="7" column="67" selection-start-line="7" selection-start-column="67" selection-end-line="7" selection-end-column="67" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="234">
+                <caret line="13" column="3" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="3" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/client-side-tracking-and-personalization/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="162">
+                <caret line="85" column="117" lean-forward="true" selection-start-line="85" selection-start-column="117" selection-end-line="85" selection-end-column="117" />
+                <folding>
+                  <marker date="1587476478416" expanded="true" signature="2236:2530" ph="{&quot;source&quot;: 'QuantumDecDemo'...}" />
+                  <marker date="1587476478416" expanded="true" signature="3156:3370" ph="{...}" />
+                  <marker date="1587476478416" expanded="true" signature="3184:3288" ph="{&quot;FirstName&quot;: 'John'...}" />
+                </folding>
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client-side-tracking-and-personalization/jumbotron-narrow.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-864" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Telerik.DEC.LeadScoringEventClientSample/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="180">
+                <caret line="10" selection-start-line="10" selection-end-line="10" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>Telerik EAD</find>
+      <find>Progress.com</find>
+      <find>telerik.com</find>
+      <find>https://github.com/Sitefinity/dec-samples/commits/master</find>
+      <find>Telerik</find>
+      <find>digital</find>
+      <find>dec</find>
+    </findStrings>
+    <dirStrings>
+      <dir>C:\Code\Samples\dec-samples</dir>
+      <dir>C:\Code\Samples\dec-samples\Telerik.DEC.LeadScoringEventClientSample</dir>
+    </dirStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="copyright-update" />
+      </map>
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/client-side-tracking-and-personalization/readme.md" />
+        <option value="$PROJECT_DIR$/Quantum Mobile Hybrid/readme.md" />
+        <option value="$PROJECT_DIR$/client-side-tracking-and-personalization/LICENSE.md" />
+        <option value="$PROJECT_DIR$/Quantum Mobile Hybrid/LICENSE.md" />
+        <option value="$PROJECT_DIR$/Quantum Mobile Hybrid.Tests/LICENSE.md" />
+        <option value="$PROJECT_DIR$/Telerik.DEC.LeadScoringEventClientSample/LICENSE.md" />
+        <option value="$PROJECT_DIR$/LICENSE.md" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/Telerik.DEC.LeadScoringEventClientSample/readme.md" />
+        <option value="$PROJECT_DIR$/Quantum Mobile Hybrid/README.md" />
+        <option value="$PROJECT_DIR$/Telerik.DEC.LeadScoringEventClientSample/Telerik.DEC.LeadScoringEventClientSample/Properties/AssemblyInfo.cs" />
+        <option value="$PROJECT_DIR$/client-side-tracking-and-personalization/personalization.html" />
+        <option value="$PROJECT_DIR$/client-side-tracking-and-personalization/README.md" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="260" />
+    <option name="y" value="80" />
+    <option name="width" value="1400" />
+    <option name="height" value="1000" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="dec-samples" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dec-samples" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="dec-samples" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dec-samples" type="462c0819:PsiDirectoryNode" />
+              <item name="client-side-tracking-and-personalization" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="HbShouldOpenHtmlAsHb" value="" />
+    <property name="SearchEverywhereHistoryKey" value="Telerik EAD&#9;null&#9;null" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Code\Samples\dec-samples\client-side-tracking-and-personalization" />
+      <recent name="C:\Code\Samples\dec-samples\Quantum Mobile Hybrid" />
+      <recent name="C:\Code\Samples\dec-samples\Telerik.DEC.LeadScoringEventClientSample" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d3073737-1fba-437d-92bb-2138b67e204c" name="Default" comment="" />
+      <created>1543225235547</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1543225235547</updated>
+      <workItem from="1543225236735" duration="368000" />
+      <workItem from="1543226224474" duration="280000" />
+      <workItem from="1543235953053" duration="4611000" />
+      <workItem from="1543826637376" duration="1627000" />
+      <workItem from="1587475724582" duration="862000" />
+    </task>
+    <task id="LOCAL-00001" summary="Updated copyright.&#10;&#10;Reviewed by: N/A">
+      <created>1543309137164</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1543309137164</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Updated copyright.&#10;&#10;Reviewed by: viktor.zhivkov@progress.com">
+      <created>1543828133663</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1543828133663</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="7748000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24983476" />
+      <window_info id="Structure" order="1" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" visible="true" weight="0.3286119" />
+      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.3298969" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Updated copyright.&#10;&#10;Reviewed by: N/A" />
+    <MESSAGE value="Updated copyright.&#10;&#10;Reviewed by: viktor.zhivkov@progress.com" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated copyright.&#10;&#10;Reviewed by: viktor.zhivkov@progress.com" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Quantum Mobile Hybrid/LICENSE.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="102">
+            <caret line="6" column="334" selection-start-line="6" selection-start-column="334" selection-end-line="6" selection-end-column="334" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Quantum Mobile Hybrid.Tests/LICENSE.md" />
+    <entry file="file://$PROJECT_DIR$/LICENSE.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="493">
+            <caret line="65" selection-start-line="65" selection-end-line="65" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Quantum Mobile Hybrid/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="2160">
+            <caret line="119" column="3" selection-start-line="119" selection-start-column="3" selection-end-line="119" selection-end-column="3" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Telerik.DEC.LeadScoringEventClientSample/LICENSE.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="270">
+            <caret line="15" column="88" selection-start-line="15" selection-start-column="88" selection-end-line="15" selection-end-column="88" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Telerik.DEC.LeadScoringEventClientSample/Telerik.DEC.LeadScoringEventClientSample/Properties/AssemblyInfo.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="67" selection-start-line="7" selection-start-column="67" selection-end-line="7" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="234">
+            <caret line="13" column="3" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="3" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Telerik.DEC.LeadScoringEventClientSample/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="180">
+            <caret line="10" selection-start-line="10" selection-end-line="10" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client-side-tracking-and-personalization/jumbotron-narrow.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-864" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client-side-tracking-and-personalization/LICENSE.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="306">
+            <caret line="4" column="777" selection-start-line="4" selection-start-column="777" selection-end-line="4" selection-end-column="777" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client-side-tracking-and-personalization/personalization.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="157">
+          <caret line="34" column="44" selection-start-line="34" selection-start-column="44" selection-end-line="34" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client-side-tracking-and-personalization/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="162">
+            <caret line="85" column="117" lean-forward="true" selection-start-line="85" selection-start-column="117" selection-end-line="85" selection-end-column="117" />
+            <folding>
+              <marker date="1587476478416" expanded="true" signature="2236:2530" ph="{&quot;source&quot;: 'QuantumDecDemo'...}" />
+              <marker date="1587476478416" expanded="true" signature="3156:3370" ph="{...}" />
+              <marker date="1587476478416" expanded="true" signature="3184:3288" ph="{&quot;FirstName&quot;: 'John'...}" />
+            </folding>
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+          <folding>
+            <marker date="1587476478416" expanded="true" signature="2236:2530" ph="{&quot;source&quot;: 'QuantumDecDemo'...}" />
+            <marker date="1587476478416" expanded="true" signature="3156:3370" ph="{...}" />
+            <marker date="1587476478416" expanded="true" signature="3184:3288" ph="{&quot;FirstName&quot;: 'John'...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
