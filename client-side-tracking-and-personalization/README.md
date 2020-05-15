@@ -1,20 +1,20 @@
 ## Overview
-The purpose of this application is to demonstrate how you can use the [Progress Sitefinity Digital Experience Cloud JavaScript SDK](http://docs.sitefinity.com/dec/leverage-the-javascript-sdk-to-capture-client-side-behavior) (version [1.2.2](https://dec.azureedge.net/sdk/telerik-dec-client.min.1.2.2.js) for personalizing a web application. The UI is developed within the context of the Bootstrap framework (Narrow Jumbotron Template) with simple HTML and JavaScript. The application has a simple structure and revolves around 3 key types of personalization - by persona, by campaign, and by lead scoring.
+The purpose of this application is to demonstrate how you can use the [Progress Sitefinity Insight JavaScript SDK](https://www.progress.com/documentation/sitefinity-cms/insight/capture-client-side-behavior-with-javascript-sdk) (version [3.0.11](https://cdn.insight.sitefinity.com/sdk/sitefinity-insight-client.min.3.0.11.js)) for personalizing a web application. The UI is developed within the context of the Bootstrap framework (Narrow Jumbotron Template) with simple HTML and JavaScript. The application has a simple structure and revolves around 3 key types of personalization - by persona, by campaign, and by lead scoring.
 
-## DEC SDK Initialization
-To start working with the DEC JavaScript SDK, you first need to create an instance with an options object that contains the following information:
-- **source** - represents the data source, from which the specific data center collects data. For the requirements of this sample scenario, this is *QuantumDecDemo*, which identifies the data collected by this demo application.
+## Sitefinity Insight SDK Initialization
+To start working with the Sitefinity Insight JavaScript SDK, you first need to create an instance with an options object that contains the following information:
+- **source** - represents the data source, from which the specific data center collects data. For the requirements of this sample scenario, this is *QuantumInsightDemo*, which identifies the data collected by this demo application.
 - **subjectKey** - represents the subject that is used in each data collection call or personalization call. In most cases, this is the user ID. If you leave out this parameter, the JavaScript SDK auto-generates the key.
-**NOTE: DEC will recognize and map contacts that have one and the same email, but different user IDs. The same applies for contacts that have the same user IDs, but different emails.
+**NOTE: Sitefinity Insight will recognize and map contacts that have one and the same email, but different user IDs. The same applies for contacts that have the same user IDs, but different emails.
 - **apiKey** - the API key associated with the data center that collects the data. 
-- **authToken** - passed as Authorization header. This token is intended to be used by an application, so it can authorize it to communicate with the personalization endpoints. You can get your token from the DEC Administration dashboard of your data center by navigating to "Authorized application" section. Next, simply concatenate "appauth " string with the obtained access token, for example: "appauth 97e8b2d2-93ce-cd01-b47b-076a201eab11".
+- **authToken** - passed as Authorization header. This token is intended to be used by an application, so it can authorize it to communicate with the personalization endpoints. You can get your token from the Sitefinity Insight Administration dashboard of your data center by navigating to "Authorized application" section. Next, simply concatenate "appauth " string with the obtained access token, for example: "appauth 97e8b2d2-93ce-cd01-b47b-076a201eab11".
 - **trackPageVisits** - indicates whether out-of-the-box tracking of page visits is used.
 - **instrument** - indicates whether HTML5 instrumentation is used.
 
 ##### Example:
 ```javascript
-var decClient = new sfDataIntell.Client({
-    source: 'QuantumDecDemo',
+var insightClient = new sfDataIntell.Client({
+    source: 'QuantumInsightDemo',
     subjectKey: '89071fdf-baf0-4d7a-80d2-02113b40a08c', // or leave empty to auto-generate id
     apiKey: 'f1b2f31b-eab7-475d-82ba-2135c7ab7a7e',
     authToken: 'appauth 89071fdf-baf0-4d7a-80d2-02113b40a08c',
@@ -26,7 +26,7 @@ var decClient = new sfDataIntell.Client({
 
 #### Additional setup
 To properly test the personalization functionality, you need to also configure the following:
-1. "Submit form data" button - simulates submitting of form data, which is then embedded in an interaction and sent to DEC. You can see this function in the code and can optionally modify the subject metadata to test different scenarios, for example submitting user's names and email:
+1. "Submit form data" button - simulates submitting of form data, which is then embedded in an interaction and sent to Sitefinity Insight. You can see this function in the code and can optionally modify the subject metadata to test different scenarios, for example submitting user's names and email:
 ###### Example:
 ```javascript
 var submitFormData = function () {
@@ -35,13 +35,13 @@ var submitFormData = function () {
         'LastName': 'Doe',
         'Email': 'john.doe@progress.com'
     };
-    decClient.subjectMetadataClient.writeSubjectMetadata(subjectMetadata);
+    insightClient.subjectMetadataClient.writeSubjectMetadata(subjectMetadata);
 };
 ```
 2. "Delete cookie" button - deletes the cookie set by the JavaScript SDK. The cookie keeps a contact's **subjectKey**. If you are not using a specific **subjectKey** (in which case it should be auto-generated by the JavaScript SDK), you need to delete the cookie, so that you can complete the demo as another user.
 
-## DEC configuration
-To enable the demo application to work, you need to configure the following scoring models for reporting (personas definition, lead scoring, conversion tracking and campaign definition) in the DEC data center.
+## Sitefinity Insight configuration
+To enable the demo application to work, you need to configure the following scoring models for reporting (personas definition, lead scoring, conversion tracking and campaign definition) in the Sitefinity Insight data center.
 
 #### Persona
 1. Create a "Dev user" Persona with a 50 point threshold.
@@ -73,20 +73,20 @@ To enable the demo application to work, you need to configure the following scor
 5. From the URL string, copy the campaign Id, so that you can later use it when personalizing the site, based on a specific campaign.
 
 ## Tracking
-The JavaScript SDK automatically tracks page visits. To track custom interactions for the purposes of this demo sample, we use HTML5 instrumentation. For more information about the ways you can use HTML5 instrumentation to track the audience of your site, see [Leverage the JavaScript SDK to capture client side behavior](https://docs.sitefinity.com/dec/api-v2/for-developers-leverage-the-javascript-sdk-to-capture-client-side-behavior).
+The JavaScript SDK automatically tracks page visits. To track custom interactions for the purposes of this demo sample, we use HTML5 instrumentation. For more information about the ways you can use HTML5 instrumentation to track the audience of your site, see [Leverage the JavaScript SDK to capture client side behavior](https://www.progress.com/documentation/sitefinity-cms/insight/capture-client-side-behavior-with-javascript-sdk).
 
 ## Personalization
 The UI has three tabs, each with specific personalization purpose. You can find the code at the bottom of the HTML file. The setup should call the 3 functions every second and accordingly update the personalized area. After setting up personalization, you can simulate different actions and interactions and see the result of these actions in the specified page area.
 The JavaScript SDK provides a functionality for personalization by:
-- [persona](http://docs.sitefinity.com/dec/personas-profile-your-audience) - Use **personalizationClient.isInPersonas(scoringIds, doneCallback, failCallback, subjectKey)** method. Returns a list of ScoringResults describing the threshold, score and scoringId.
-- [campaign](http://docs.sitefinity.com/dec/campaigns-define-and-track) - Use **personalizationClient.isInCampaigns(campaignIds, doneCallback, failCallback)** method. Returns a collection of objects indicating whether the client is in the requested campaigns.
-- [lead scoring](http://docs.sitefinity.com/dec/lead-scoring-align-marketing-and-sales) - Use the new **v2.personalizationClient.isInLeads(scoringIds, doneCallback, failCallback, subjectKey)** method. Based on a collection of clients data sources, subjects and collection of leads ids, it returns information on whether a given client has scored or passed any level for each of the specified lead scorings.
+- [persona](https://www.progress.com/documentation/sitefinity-cms/insight/personas-profile-your-audience) - Use **personalizationClient.isInPersonas(scoringIds, doneCallback, failCallback, subjectKey)** method. Returns a list of ScoringResults describing the threshold, score and scoringId.
+- [campaign](https://www.progress.com/documentation/sitefinity-cms/insight/campaigns-optimize-the-customer-journey) - Use **personalizationClient.isInCampaigns(campaignIds, doneCallback, failCallback)** method. Returns a collection of objects indicating whether the client is in the requested campaigns.
+- [lead scoring](https://www.progress.com/documentation/sitefinity-cms/insight/lead-scoring-align-marketing-and-sales) - Use the new **v2.personalizationClient.isInLeads(scoringIds, doneCallback, failCallback, subjectKey)** method. Based on a collection of clients data sources, subjects and collection of leads ids, it returns information on whether a given client has scored or passed any level for each of the specified lead scorings.
 
-## Additional information about working with Digital Experience Cloud JavaScript SDK personalization client
-Take a look at [this wiki article](https://github.com/Sitefinity/dec-samples/wiki/DEC-JS-SDK-Personalization-Client).
+## Additional information about working with Sitefinity Insight JavaScript SDK personalization client
+Take a look at [this wiki article](https://github.com/Sitefinity/dec-samples/wiki/Sitefinity-Insight-JS-SDK-Personalization-Client).
 
 ---
 
-###### Copyright © 2018 Progress Software Corporation and/or one of its subsidiaries or affiliates. All rights reserved.
+###### Copyright © 2020 Progress Software Corporation and/or one of its subsidiaries or affiliates. All rights reserved.
 
 ---

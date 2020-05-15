@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Progress Sitefinity Digital Experience Cloud SDK for JavaScript</title>
+    <title>Progress Sitefinity Insight SDK for JavaScript</title>
 
     <!-- Bootstrap core CSS -->
     <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
@@ -18,8 +18,7 @@
     <!-- Bootstrap core js -->
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
-    <!--TODO: change sdk version after the release of the version-->
-    <script src="https://dec.azureedge.net/sdk/telerik-dec-client.min.2.0.0.js" type="text/javascript"></script>
+    <script src="https://cdn.insight.sitefinity.com/sdk/sitefinity-insight-client.3.0.11.js" type="text/javascript"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -33,8 +32,7 @@
 <div class="container">
     <div class="jumbotron">
         <h1>Custom tracking and personalization sample</h1>
-        <p class="lead"><a href="http://www.sitefinity.com/digital-experience-cloud">Progress Sitefinity Digital
-            Experience Cloud</a> SDK
+        <p class="lead"><a href="https://www.progress.com/sitefinity-cms/digital-experience-cloud">Progress Sitefinity Insight</a> SDK
             for JavaScript</p>
     </div>
 
@@ -153,7 +151,7 @@
         </div>
         <div class="settings-item col-xs-12">
             <div class="col-xs-6">
-                Use the following button to simulate submitting of client data <b>(check "submitClientData" function in the code)</b>. Email being part of the keys would make the client a known contact within DEC.
+                Use the following button to simulate submitting of client data <b>(check "submitClientData" function in the code)</b>. Email being part of the keys would make the client a known contact within Sitefinity Insight.
             </div>
             <div class="col-xs-6">
                 <button class="btn btn-lg btn-info" onclick="submitClientData()">Submit client data</button>
@@ -171,13 +169,13 @@
     </div>
     <hr/>
 
-    <script> // Dec client initialization
+    <script> // Sitefinity Insight client initialization
     </script>
 
     <script>
-        var testDataSource = 'QuantumDecDemo';
+        var testDataSource = 'QuantumInsightDemo';
         var subjectKey = ''; // '<please paste the unique guid of the current user or leave as NULL/empty to auto generate one>'
-        var decClient = new sfDataIntell.Client({
+        var insightClient = new sfDataIntell.Client({
             apiKey: '<please paste the apiKey of you datacenter here>',
             authToken: 'appauth <please paste the access token of your datacenter here>',
             source: testDataSource,
@@ -198,7 +196,7 @@
                 'LastName': 'Doe',
                 'Email': 'john.doe@progress.com'
             };
-            decClient.subjectMetadataClient.writeSubjectMetadata(subjectMetadata);
+            insightClient.subjectMetadataClient.writeSubjectMetadata(subjectMetadata);
         };
 
         var deleteCookieAndReload = function () {
@@ -224,7 +222,7 @@
             };
 
             var scoringIds = [14]; // [], Enter the Persona id you want to check. You can check multiple ids or leave it empty in order to check all the Personas
-            decClient.personalizationClient.isInPersonas(scoringIds, doneCallback, failCallback, subjectKey);
+            insightClient.personalizationClient.isInPersonas(scoringIds, doneCallback, failCallback, subjectKey);
         };
 
         var checkIsInCampaign = function () {
@@ -250,7 +248,7 @@
             };
 
             var campaignIds = [25]; // '[28, 30]; To check for specific campaigns, type their ids as an array of numbers
-            decClient.personalizationClient.isInCampaigns(campaignIds, doneCallback, failCallback);
+            insightClient.personalizationClient.isInCampaigns(campaignIds, doneCallback, failCallback);
         };
 
         var checkIsInLeads = function () {
@@ -284,13 +282,13 @@
             var scoringIds = [17]; // Enter the lead scoring id you want to check. You can check multiple ids or leave it empty in order to check all the Lead scorings.
 
             // Deprecated! Do not use!
-            // decClient.personalizationClient.isInLeads(scoringIds, contactsDetailsJSON, doneCallback, failCallback);
-            decClient.v2.personalizationClient.isInLeads(scoringIds, doneCallback, failCallback, subjectKey);
+            // insightClient.personalizationClient.isInLeads(scoringIds, contactsDetailsJSON, doneCallback, failCallback);
+            insightClient.v2.personalizationClient.isInLeads(scoringIds, doneCallback, failCallback, subjectKey);
         };
     </script>
 
     <footer class="footer">
-        <p>&copy; Progress Software Company 2017</p>
+        <p>Copyright © 2020 Progress Software Corporation and/or one of its subsidiaries or affiliates. All rights reserved</p>
     </footer>
 
 </div> <!-- /container -->

@@ -11,7 +11,7 @@
         </div>
     </header>
 
-    <h2 class="dec-midtitle" data-bind="text: details.title">
+    <h2 class="sf-insight-midtitle" data-bind="text: details.title">
     </h2>
 
     <p data-bind="visible: details.imageUrl">
@@ -19,18 +19,18 @@
     </p>
     
     <p>
-        <a data-role="button" class="dec-likes"  data-bind="click: toggleLike">
+        <a data-role="button" class="sf-insight-likes"  data-bind="click: toggleLike">
             <i data-bind="attr: {class: userLikedClass}"></i><br>
             <span data-bind="text: likesCount"></span><span> likes</span>
         </a>
-        <a  data-bind="click: toCommentsPage" data-role="button" style="float: right;" class="dec-comments">
+        <a  data-bind="click: toCommentsPage" data-role="button" style="float: right;" class="sf-insight-comments">
             <i class="fa fa-comment-o fa-2x"></i><br>
             <span data-bind="text: commentsCount"></span><span> comments</span>
         </a>
         <hr />
     </p>
 
-    <p data-bind="text: details.text" class="dec-details-text"></p>
+    <p data-bind="text: details.text" class="sf-insight-details-text"></p>
 </div>
 
 <form class="share-form"  style="display: none">

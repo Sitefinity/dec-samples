@@ -3,7 +3,7 @@
     <header data-role="header">
         <div data-role="navbar">
             <span data-role="view-title"></span>
-            <a data-role="button" href="views/posts/search-post.html" data-align="right"  class="fa fa-search dec-button-small"></a>
+            <a data-role="button" href="views/posts/search-post.html" data-align="right"  class="fa fa-search sf-insight-button-small"></a>
         </div>
     </header>
 
@@ -21,7 +21,7 @@
 </div>
 
 <script id="list-post-group-header" type="text/x-kendo-template">
-    <div class="dec-group-header">
+    <div class="sf-insight-group-header">
         <span>#: demoApplication.utils.dateTime.dateToDaysAgo(value)#</span>
         <span>#: value #</span>
     </div>    
@@ -36,32 +36,32 @@
             </p>
             # } #
             
-            <h2 class="dec-title-link">
+            <h2 class="sf-insight-title-link">
                 <a href="\#views/posts/post-details.html?postId=#: id #">#: title #</a>
             </h2>
             <p>
                 #: overview #
             </p>
          	<p>
-                <a data-role="button" style="float: left" class="dec-likes" data-click="demoApplication.listPosts.toggleUserLike" data-postid="#: id #">
+                <a data-role="button" style="float: left" class="sf-insight-likes" data-click="demoApplication.listPosts.toggleUserLike" data-postid="#: id #">
                     <i class="fa fa-heart#: demoApplication.posts.checkIfCurrentUserLikesPost(data) ? '' : '-o'# fa-2x"></i><br>
                     <span>#:likesCount# likes</span>
                 </a>
-                <a  href="\#views/posts/post-comments.html?postId=#: id #" data-role="button" style="float: right;" class="dec-comments">
+                <a  href="\#views/posts/post-comments.html?postId=#: id #" data-role="button" style="float: right;" class="sf-insight-comments">
                 	<i class="fa fa-comment-o fa-2x"></i><br>
                     <span>#: commentsCount# comments</span> 
    			 </a>
              </p>
         #} else {#
-        	<div class="dec-banner #: name #">
+        	<div class="sf-insight-banner #: name #">
                 <image src="#: imageUrl #" style="width: 30%; position: absolute; left: .3em;" />
                 <h3>#: personalMessage #</h3>
                 <p>
                  #if(phoneNumber !== false) {#
                     #if(demoApplication.isEmulated){#
-                    	<a onclick="demoApplication.listPosts.showMockCall('#: phoneNumber #')" class="dec-phone"><i class="fa fa-phone fa-lg"></i> #: phoneNumber #</a>
+                    	<a onclick="demoApplication.listPosts.showMockCall('#: phoneNumber #')" class="sf-insight-phone"><i class="fa fa-phone fa-lg"></i> #: phoneNumber #</a>
                     #} else {#
-                    	<a href="tel:#: phoneNumber #" class="dec-phone" onclick="demoApplication.tracking.writeSentence(demoApplication.tracking.predicates.call, '#: phoneNumber #')"><i class="fa fa-phone fa-lg"></i> #: phoneNumber #</a>
+                    	<a href="tel:#: phoneNumber #" class="sf-insight-phone" onclick="demoApplication.tracking.writeSentence(demoApplication.tracking.predicates.call, '#: phoneNumber #')"><i class="fa fa-phone fa-lg"></i> #: phoneNumber #</a>
                     #}#
                  #}#
                 </p>

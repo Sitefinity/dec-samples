@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Telerik.DEC.LeadScoringEventClientDemo")]
+[assembly: AssemblyTitle("Progress.Sitefinity.Insight.LeadScoringEventClientDemo")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Telerik.DEC.LeadScoringEventClientDemo")]
-[assembly: AssemblyCopyright("Copyright © 2018 Progress Software Corporation and/or its subsidiaries or affiliates")]
+[assembly: AssemblyProduct("Progress.Sitefinity.Insight.LeadScoringEventClientDemo")]
+[assembly: AssemblyCopyright("Copyright © 2020 Progress Software Corporation and/or its subsidiaries or affiliates")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
