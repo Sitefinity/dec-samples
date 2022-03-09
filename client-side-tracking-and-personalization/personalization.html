@@ -39,7 +39,6 @@
     <h3>You can personalize your page by the following criteria: </h3>
     <ul class="nav nav-tabs">
         <li class="active"><a data-toggle="tab" href="#persona">By Persona</a></li>
-        <li><a data-toggle="tab" href="#campaign">By Campaign</a></li>
         <li><a data-toggle="tab" href="#lead">By Lead</a></li>
     </ul>
 
@@ -64,39 +63,6 @@
 
                     <h3 id="in-persona">You are recognized as a <b>Dev user</b> Persona</h3>
                     <h3 id="not-in-persona">You are <b>NOT</b> recognized as a Dev user Persona</h3>
-                </div>
-            </div>
-        </div>
-
-        <div id="campaign" class="by-campaign tab-pane fade row">
-            <div class="col-sm-6 campaign-conversion">
-                <p>Use the following button to simulate a <b>"Register User"</b> interaction which will make you
-                    targeted by <b>"Download demo by registered users"</b> campaign.</p>
-                <a id="btn-campaign-conversion" class="btn btn-lg btn-info" role="button"
-                   sfdi-trigger="click" sfdi-predicate="Register" sfdi-object="User">
-                    Simulate action
-                </a>
-                <p><b>Note:</b> If you have already engaged the campaign and/or converted with this subject you won't be targeted
-                    any more!</p>
-            </div>
-            <div class="col-sm-6">
-                <div class="col-sm-12">
-                    <h4>Personalized Area by Campaign</h4>
-                </div>
-
-                <div class="result-content col-sm-12">
-                    <h4 class="result-header">Result</h4>
-                    <div id="in-campaign">
-                        <p>You are targeted by <b>"Download demo by registered users"</b> campaign</p>
-                        <p>Click the following button simulate <b>"Visit Demo page"</b> interaction in order to engage
-                            and end the targeting by the campaign</p>
-                        <a id="btn-engage-campaign" class="btn btn-lg btn-info" role="button"
-                           sfdi-trigger="click" sfdi-predicate="Visit" sfdi-object="Demo page">
-                            Simulate action
-                        </a>
-                    </div>
-                    <p id="not-in-campaign">You are NOT targeted by <b>"Download demo by registered users"</b> campaign
-                    </p>
                 </div>
             </div>
         </div>
@@ -186,7 +152,6 @@
 
         var interval = setInterval(function () {
             checkIsInPersonas();
-            checkIsInCampaign();
             checkIsInLeads();
         }, 1000);
 
@@ -223,32 +188,6 @@
 
             var scoringIds = [14]; // [], Enter the Persona id you want to check. You can check multiple ids or leave it empty in order to check all the Personas
             insightClient.personalizationClient.isInPersonas(scoringIds, doneCallback, failCallback, subjectKey);
-        };
-
-        var checkIsInCampaign = function () {
-            var doneCallback = function (data, textStatus, jqXHR) {
-                var responseIds = data;
-                if (responseIds && responseIds.length) {
-                    $.each(responseIds, function (key, value) {
-                        if (campaignIds[0] === value) {
-                            $('#in-campaign').show();
-                            $('#not-in-campaign').hide();
-                            return;
-                        }
-                    });
-                } else {
-                    $('#in-campaign').hide();
-                    $('#not-in-campaign').show();
-                }
-            };
-            var failCallback = function (jqXHR, textStatus, errorThrown) {
-                if (console && console.log) {
-                    console.log(jqXHR.responseText);
-                }
-            };
-
-            var campaignIds = [25]; // '[28, 30]; To check for specific campaigns, type their ids as an array of numbers
-            insightClient.personalizationClient.isInCampaigns(campaignIds, doneCallback, failCallback);
         };
 
         var checkIsInLeads = function () {
